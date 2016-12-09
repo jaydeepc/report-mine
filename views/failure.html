@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type = "text/javascript"
+            src = "../js/jquery-1.12.1.min.js"></script>
+    <link rel="stylesheet" href="../css/flip.css">
+    <link rel="stylesheet" href="../css/heading.css">
+    <link rel="stylesheet" href="../css/toggle.css">
+    <link href='https://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
+    <script type = "text/javascript" language = "javascript" src="../js/cardGen.js"></script>
+    <script type = "text/javascript" src = "../js/jExpand.js"></script>
+    <style type="text/css">
+        body { font-family:Arial, Helvetica, Sans-Serif; font-size:0.8em;}
+        #report {
+        border-collapse:collapse;
+        width: 100%;
+        }
+        #report h4 { margin:0px; padding:0px;}
+        #report img { float:right;}
+        #report ul { margin:10px 0 10px 40px; padding:0px;}
+        #report th { background:#7CB8E2 url(header_bkg.png) repeat-x scroll center left; color:#fff; padding:7px 15px; text-align:left;}
+        #report td { background:white none repeat-x scroll center left; color:#000; padding:7px 15px; font-size: 13px;}
+        #report tr.odd td { background:#fff url(row_bkg.png) repeat-x scroll center left; cursor:pointer; }
+        #report div.arrow { background:transparent url(arrows_down.png) no-repeat scroll 0px -16px; width:16px; height:16px; display:block;}
+        #report div.up { background-position:0px 0px;}
+    </style>
+
+</head>
+<body>
+<div id="toggle-view">
+    <div id="heading">
+        <h1>Failed Specs</h1>
+        <div id="heading"><p>Click on the arrow to see the stacktrace</p></div>
+    </div>
+    <table id="report">
+        <tr>
+            <th>Test Name</th>
+            <th>Module</th>
+            <th></th>
+        </tr>
+    </table>
+</div>
+
+
+
+<footer style="margin-top: 70%; text-align:center;">
+</footer>
+</body>
+</html>

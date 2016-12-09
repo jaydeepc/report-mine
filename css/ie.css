@@ -1,0 +1,25 @@
+/* #########################################################
+
+HOW TO CREATE CSS3 PRICING TABLES [TUTORIAL]
+
+"How to create CSS3 Pricing Tables [Tutorial]" was specially made for DesignModo by our friend Valeriu Timbuc.
+
+Links:
+http://vtimbuc.net
+http://designmodo.com
+http://vladimirkudinov.com
+
+######################################################### */
+
+
+
+/* Plan Price Section */
+.pricing-table thead .price a { right: 0; }
+
+.pricing-table thead .price .green a:before,
+.pricing-table thead .price .orange a:before,
+.pricing-table thead .price .green a:after,
+.pricing-table thead .price .orange a:after { display: none; }
+
+/* Plan Features Section */
+.pricing-table tbody tr:first-child td:before {	top: -15px; }

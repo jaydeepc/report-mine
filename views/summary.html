@@ -1,0 +1,168 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Report</title>
+    <script type = "text/javascript"
+            src = "../js/jquery-1.12.1.min.js"></script>
+    <script type = "text/javascript" language = "javascript" src="../js/parser.js"></script>
+    <!-- amCharts javascript sources -->
+    <script type="text/javascript" src="../js/amcharts.js"></script>
+    <script type="text/javascript" src="../js/pie.js"></script>
+    <script type="text/javascript" src="../js/gauge.js"></script>
+    <script type="text/javascript" src="../js/swipe.js"></script>
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/chart_style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/pricing-tables.css">
+    <link rel="stylesheet" href="../css/card_open.css">
+    <script src="../js/highcharts.js"></script>
+    <script src="../js/highcharts-more.js"></script>
+    <!--[if lte IE 9]><link rel="stylesheet" href="../css/ie.css"><![endif]-->
+
+    <style>
+        .amcharts-chart-div {
+            width: 1500px !important;
+            text-align: center !important;
+        }
+
+        svg path{
+            width: 1000px !important;
+            text-align: center !important;
+        }
+
+    </style>
+    <!-- <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> -->
+</head>
+
+<body>
+<br>
+<br>
+
+<div id="heading_common">
+    <h1>Summary of the Suite Run</h1>
+    <hr width="100%">
+</div>
+
+<div id="heading_common"><p>Hover over the pie to see the numbers</p></div>
+<br>
+<br>
+<div id='mySwipe' style='max-width:721px;margin:0 auto' class='swipe'>
+  <div class='swipe-wrap'>
+      <div id = "stage" style = "">
+          <div class="type-heading">Specs Execution Summary</div>
+        <table class="pricing-table">
+            <thead>
+            <tr class="plan">
+                <td class="green">
+                    <h2>Pass</h2>
+                    <em>Happy Tests</em>
+                </td>
+                <td class="red">
+                    <h2>Failed</h2>
+                    <em>Assertions went wrong</em>
+                </td>
+                <td class="yellow">
+                    <h2>Skips</h2>
+                    <em>Did not run</em>
+                </td>
+            </tr>
+            <tr class="price">
+                <td class="green">
+                    <a href="pass.html">Check</a>
+                </td>
+                <td class="red">
+                    <a href="failure.html">Check</a>
+                </td>
+                <td class="yellow">
+                    <a href="skip.html">Check</a>
+                </td>
+            </tr>
+            </thead>
+        </table>
+          <p style="height: 30px;"></p>
+        <div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
+      </div>
+      <div id = "stage_spec" style = "">
+          <div class="type-heading">Scenarios Execution Summary</div>
+        <table class="pricing-table">
+            <thead>
+            <tr class="plan">
+                <td class="green">
+                    <h2>Pass</h2>
+                    <em>Happy Specs</em>
+                </td>
+                <td class="red">
+                    <h2>Failed</h2>
+                    <em>Assertions Specs</em>
+                </td>
+                <td class="yellow">
+                    <h2>Skips</h2>
+                    <em>Skipped</em>
+                </td>
+            </tr>
+            <tr class="price">
+                <td class="green">
+                    <a href="pass.html">Check</a>
+                </td>
+                <td class="red">
+                    <a href="failure.html">Check</a>
+                </td>
+                <td class="yellow">
+                    <a href="skip.html">Check</a>
+                </td>
+            </tr>
+            </thead>
+        </table>
+          <p style="height: 30px;"></p>
+        <div id="chartdiv1" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
+
+      </div>
+      <div>
+        <div class="type-heading">Execution Specific Info</div>
+
+        <table class="container">
+            <tbody>
+                <tr>
+                    <td>Project</td>
+                    <td class="info"></td>
+                    <td class="project"></td>
+                </tr>
+                <tr>
+                    <td>Environment</td>
+                    <td class="info"></td>
+                    <td class="env"></td>
+                </tr>
+                <tr>
+                    <td>Tags</td>
+                    <td class="info"></td>
+                    <td class="tags"></td>
+                </tr>
+                <tr>
+                    <td>Generated On</td>
+                    <td class="info"></td>
+                    <td class="gt"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="gaugechart" style="min-width: 310px; max-width: 600px; height: 400px; margin: 0 auto"></div>
+      </div>
+  </div>
+</div>
+
+<div style='text-align:center;padding-top:-20px;'>
+
+  <button onclick='mySwipe.prev()'>prev</button>
+  <button onclick='mySwipe.next()'>next</button>
+
+</div>
+<script type="text/javascript" src="../js/swiping.js"></script>
+<div id="module-link"><a href="modules.html" align="center">Check the Modules Report</a></div>
+<br>
+
+
+<footer>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type = "text/javascript"
+            src = "jquery-1.12.1.min.js"></script>
+    <link rel="stylesheet" href="flip.css">
+    <link rel="stylesheet" href="heading.css">
+    <link href='https://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="toggle.css">
+    <script type = "text/javascript" language = "javascript" src="cardGen.js"></script>
+    <script type = "text/javascript" src = "jExpand.js"></script>
+    <style type="text/css">
+        body { font-family:Arial, Helvetica, Sans-Serif; font-size:0.8em;}
+        #report_pass {
+        border-collapse:collapse;
+        width: 100%;
+        }
+        #report_pass h4 { margin:0px; padding:0px;}
+        #report_pass img { float:right;}
+        #report_pass ul { margin:10px 0 10px 40px; padding:0px;}
+        #report_pass th { background:#7CB8E2 url(../img/header_bkg.png) repeat-x scroll center left; color:#fff; padding:7px 15px; text-align:left;}
+        #report_pass td { background:white none repeat-x scroll center left; color:#000; padding:7px 15px; font-size: 13px;}
+        #report_pass tr.odd td { background:#fff url(../img/row_bkg.png) repeat-x scroll center left; cursor:pointer; }
+        #report_pass div.arrow { background:transparent url(../img/arrows_down.png) no-repeat scroll 0px -16px; width:16px; height:16px; display:block;}
+        #report_pass div.up { background-position:0px 0px;}
+
+        #toggle-buttons{
+            margin-top: 10px;
+        }
+        #heading h1{
+
+        }
+    </style>
+
+</head>
+
+<body>
+<div id="parent">
+<div id="toggle-buttons">
+    <button id="list" class="on"></button>
+    <button id="grid"></button>
+</div>
+
+<div id="card-view">
+    <div id="heading">
+        <h1>Tests Passed</h1>
+        <p>Its all green, people!</p>
+    </div>
+    <div id="container_pass">
+    </div>
+    <br>
+
+</div>
+
+<div id="toggle-view">
+    <div id="heading">
+        <h1>Tests Passed</h1>
+        <p>Its all green, people!</p>
+    </div>
+    <table id="report_pass">
+        <tr>
+            <th>Test Name</th>
+            <th>Module</th>
+            <th></th>
+        </tr>
+    </table>
+</div>
+</div>
+
+<footer style="margin-top: 70%; text-align:center;" class="heading">
+    <hr>
+    <p>&copy; Copyright 2016 | Jaydeep Chakrabarty | All Rights Reserved.</p>
+</footer>
+</body>
+</html>
