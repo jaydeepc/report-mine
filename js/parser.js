@@ -12,48 +12,47 @@
             }
 
                $.getJSON('../data/result.json', function(jd) {
-                    total_failed_specs = jd.suiteResult.specsFailedCount;
-                    total_skipped_specs = jd.suiteResult.specsSkippedCount;
-                    total_pass_rate = jd.suiteResult.successRate;
-                    total_specs = Math.round((total_failed_specs + total_skipped_specs)*100 / (100 - total_pass_rate));
-                    total_pass_specs = total_specs - total_failed_specs - total_skipped_specs
+                    total_failed_tests = jd.report.summary.failed;
+                    total_skipped_tests = jd.report.summary.skipped;
+                    total_pass_tests = jd.report.summary.passed;
+                    total_tests = jd.report.summary.num_tests;
 
+                    //Populate Pie Chart
+                    $('#stage .pricing-table .price .green').append('<p><span>%</span>' + Math.round((total_pass_tests)*100/total_tests) + '</p>');
+                    $('#stage .pricing-table .price .red').append('<p><span>%</span>' + Math.round((total_failed_tests)*100/total_tests) + '</p>');
+                    $('#stage .pricing-table .price .yellow').append('<p><span>%</span>' + Math.round((total_skipped_tests)*100/total_tests) + '</p>');
+                    createPie("chartdiv", total_pass_tests, total_failed_tests, total_skipped_tests);
 
-                    $('#stage .pricing-table .price .green').append('<p><span>%</span>' + jd.suiteResult.successRate + '</p>')
-                    $('#stage .pricing-table .price .red').append('<p><span>%</span>' + Math.round((total_failed_specs)*100/total_specs) + '</p>')
-                    $('#stage .pricing-table .price .yellow').append('<p><span>%</span>' + Math.round((total_skipped_specs)*100/total_specs) + '</p>')
-
-                    env = jd.suiteResult.environment;
-                    tags = jd.suiteResult.tags;
-                    unconverted_tt = jd.suiteResult.executionTime
-                    tt = msToTime(unconverted_tt);
-                    exe_time = jd.suiteResult.timestamp;
-                    project_name = jd.suiteResult.projectName
-
-                    $('.env').append(env);
-                    $('.tags').append(tags);
-                    $('.tt').append(tt);
-                    $('.gt').append(exe_time);
-                    $('.project').append(project_name);
-
-                    total_scenarios = 0;
-                    passed_scenarios = 0;
-                    failed_scenarios = 0;
-                    skipped_scenarios = 0;
-                    for (i=0; i<jd.suiteResult.specResults.length; i++){
-                        total_scenarios = total_scenarios + jd.suiteResult.specResults[i].scenarioCount;
-                        failed_scenarios = failed_scenarios + jd.suiteResult.specResults[i].scenarioFailedCount;
-                        skipped_scenarios = skipped_scenarios + jd.suiteResult.specResults[i].scenarioSkippedCount;
-                    }
-                    passed_scenarios = total_scenarios - failed_scenarios - skipped_scenarios;
-
-                    $('#stage_spec .pricing-table .price .green').append('<p><span>%</span>' + Math.round((passed_scenarios)*100/total_scenarios) + '</p>')
-                    $('#stage_spec .pricing-table .price .red').append('<p><span>%</span>' + Math.round((failed_scenarios)*100/total_scenarios) + '</p>')
-                    $('#stage_spec .pricing-table .price .yellow').append('<p><span>%</span>' + Math.round((skipped_scenarios)*100/total_scenarios) + '</p>')
-
-                    createPie("chartdiv", total_pass_specs, total_failed_specs, total_skipped_specs)
-                    createPie("chartdiv1", passed_scenarios, failed_scenarios, skipped_scenarios)
-                    createSpeedoMeter("gaugechart", Math.round(unconverted_tt/1000));
+                    // env = jd.suiteResult.environment;
+                    // tags = jd.suiteResult.tags;
+                    // unconverted_tt = jd.suiteResult.executionTime
+                    // tt = msToTime(unconverted_tt);
+                    // exe_time = jd.suiteResult.timestamp;
+                    // project_name = jd.suiteResult.projectName
+                    //
+                    // $('.env').append(env);
+                    // $('.tags').append(tags);
+                    // $('.tt').append(tt);
+                    // $('.gt').append(exe_time);
+                    // $('.project').append(project_name);
+                    //
+                    // total_scenarios = 0;
+                    // passed_scenarios = 0;
+                    // failed_scenarios = 0;
+                    // skipped_scenarios = 0;
+                    // for (i=0; i<jd.suiteResult.specResults.length; i++){
+                    //     total_scenarios = total_scenarios + jd.suiteResult.specResults[i].scenarioCount;
+                    //     failed_scenarios = failed_scenarios + jd.suiteResult.specResults[i].scenarioFailedCount;
+                    //     skipped_scenarios = skipped_scenarios + jd.suiteResult.specResults[i].scenarioSkippedCount;
+                    // }
+                    // passed_scenarios = total_scenarios - failed_scenarios - skipped_scenarios;
+                    //
+                    // $('#stage_spec .pricing-table .price .green').append('<p><span>%</span>' + Math.round((passed_scenarios)*100/total_scenarios) + '</p>')
+                    // $('#stage_spec .pricing-table .price .red').append('<p><span>%</span>' + Math.round((failed_scenarios)*100/total_scenarios) + '</p>')
+                    // $('#stage_spec .pricing-table .price .yellow').append('<p><span>%</span>' + Math.round((skipped_scenarios)*100/total_scenarios) + '</p>')
+                    //
+                    // createPie("chartdiv1", passed_scenarios, failed_scenarios, skipped_scenarios)
+                    // createSpeedoMeter("gaugechart", Math.round(unconverted_tt/1000));
                });
 
                 function createPie(chart_id, passCount, failCount, skipCount){
@@ -69,7 +68,7 @@
                                 "colors": [
                                     "#75d644",
                                     "#f26f6f",
-                                    "#F5151C",
+                                    "#f4d20e",
                                     "#F3CB0B"
                                 ],
                                 "hoverAlpha": 0.66,
@@ -226,6 +225,5 @@
                     }
                 });
             }
-				
-         });
 
+         });

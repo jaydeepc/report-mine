@@ -1,4 +1,7 @@
-.pricing-table { min-width: 670px; }
+.pricing-table {
+	min-width: 670px;
+	text-align: center;
+}
 
 .pricing-table td {
 	position: relative;
