@@ -7,4 +7,7 @@ $(document).ready(function() {
   $("#second-details").text("Python Version");
   $("#third-details").text("Execution Time");
   $("#fourth-details").text("Created On");
+
+  //Hide data label in gaugechart
+  $(".highcharts-label").hide();
 });

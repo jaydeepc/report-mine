@@ -80,6 +80,23 @@ h2 a {
     color: black !important;
 }
 
-.summary-page-table-heading{
-  
+#gaugechart{
+  text-align: center;
+  margin-left: 68px;
+}
+
+#first-details{
+  white-space:nowrap;
+}
+
+#second-details{
+  white-space:nowrap;
+}
+
+#third-details{
+  white-space:nowrap;
+}
+
+.project{
+  white-space:nowrap;
 }
