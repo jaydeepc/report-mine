@@ -1,51 +1,86 @@
  $(document).ready(function() {
- $.getJSON('../data/result.json', function(jd) {
-    var my_array = [];
-    for(i=0; i<jd.suiteResult.specResults.length; i++){
+     $.getJSON('../data/result.json', function(jd) {
+        var module = {};
+        var modules = {};
+        var my_array = [];
 
-         total_scenarios = jd.suiteResult.specResults[i].scenarioCount
-         failed_scenarios = jd.suiteResult.specResults[i].scenarioFailedCount
-         skipped_scenarios = jd.suiteResult.specResults[i].scenarioSkippedCount
-         passed_scenarios =  total_scenarios - failed_scenarios - skipped_scenarios
-
-         ready_to_release = "Check";
-         key = jd.suiteResult.specResults[i].protoSpec.specHeading;
-         pass_percent = Math.round(passed_scenarios * 100/total_scenarios);
-         confidence_color = "orange";
-
-        if (pass_percent == 100){
-            confidence_color = "#75d644";
-            ready_to_release = "most-popular";
-        }
-        else if (pass_percent >= 80 && pass_percent < 100){
-            confidence_color = "orange";
-        }
-        else {
-            confidence_color = "#d65544";
+        for(i=0; i<jd.report.tests.length; i++){
+          value = jd.report.tests[i].name;
+          module_name = value.split("::")[1]
+          var count = (module[module_name] || 0) + 1;
+          module[module_name] = count;
         }
 
-        var data_for_graph = {};
-        data_for_graph['category'] = key;
-        data_for_graph['column-1'] = passed_scenarios;
-        data_for_graph['column-2'] = failed_scenarios;
+        for (key in module) {
+            var details = {};
+            pass_count_key = "pass_count";
+            var pass_count = 0;
+            fail_count_key = "fail_count";
+            var fail_count = 0;
+            skip_count_key = "skip_count";
+            var skip_count = 0;
+
+            for (i=0; i < jd.report.tests.length; i++){
+                if(jd.report.tests[i].name.split("::")[1] == key){
+                    if (jd.report.tests[i].outcome == 'passed'){
+                        pass_count = pass_count + 1;
+                    }
+                    else if (jd.report.tests[i].outcome == 'failed'){
+                        fail_count = fail_count + 1;
+                    }
+                    else if (jd.report.tests[i].outcome == 'skipped'){
+                        skip_count = skip_count + 1;
+                    }
+
+                }
+            }
+            details['total'] = module[key];
+            details[pass_count_key] = pass_count;
+            details[fail_count_key] = fail_count;
+            details[skip_count_key] = skip_count;
+            modules[key] = details;
+
+        }
+
+        for (key in modules){
+            var data_for_graph = {};
+            data_for_graph['category'] = key;
+            data_for_graph['column-1'] = modules[key]['pass_count'];
+            data_for_graph['column-2'] = modules[key]['fail_count'];
+            my_array.push(data_for_graph);
+        }
 
 
-        my_array.push(data_for_graph);
+        for (key in modules){
+                var confidence_color;
+                var pass_percent;
+                var ready_to_release = "";
+                pass_percent = Math.round((modules[key]['pass_count'])*100/modules[key]['total']);
+                if (pass_percent == 100){
+                    confidence_color = "#7EC416";
+                    ready_to_release = "most-popular";
+                }
+                else if (pass_percent >= 80 && pass_percent < 100){
+                    confidence_color = "orange";
+                }
+                else {
+                    confidence_color = "#E32D2D";
+                }
 
+               $("#pricing-table").append(
+              '<div class="plan" id="'+ ready_to_release +'"><h3>' + key + '<span>' + pass_percent + '%</span></h3>' +
+              '<div class="confidence" style="color: white; background-color: ' + confidence_color + '">' + 'Confidence' + '</div>' +
+              '<ul>' +
+                  '<li><b>' + modules[key]['total'] + '</b> - Total Number of Tests</li>' +
+                  '<li><b>' + modules[key]['pass_count'] + '</b> - Tests Passed</li>' +
+                  '<li><b>' + modules[key]['fail_count'] + '</b> - Tests Failed</li>' +
+                  '<li><b>' + modules[key]['skip_count'] + '</b> - Tests Skipped</li>' +
+                  '</ul></div>'
+
+              );
+
+        }
         createBar(my_array);
-         $("#pricing-table").append(
-        '<div class="plan" id="'+ ready_to_release +'"><h3>' + key + '<span>' + pass_percent + '%</span></h3>' +
-        '<div class="confidence" style="color: white; background-color: ' + confidence_color + '">' + 'Confidence' + '</div>' +
-        '<ul>' +
-            '<li><b>' + total_scenarios + '</b> - Total Number of Scenarios</li>' +
-            '<li><b>' + passed_scenarios + '</b> - Scenarios Passed</li>' +
-            '<li><b>' + failed_scenarios + '</b> - Scenarios Failed</li>' +
-            '<li><b>' + skipped_scenarios+ '</b> - Scenarios Skipped</li>' +
-            '</ul></div>'
-
-        );
-
-    }
     });
  });
 
