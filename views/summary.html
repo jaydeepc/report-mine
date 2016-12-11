@@ -31,7 +31,6 @@
             width: 1000px !important;
             text-align: center !important;
         }
-
     </style>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </head>
@@ -49,9 +48,9 @@
 <br>
 <br>
 <div id='mySwipe' style='max-width:721px;margin:0 auto' class='swipe'>
-  <div class='swipe-wrap'>
+  <div class='swipe-wrap' style="width: 721 px">
       <div id = "stage" style = "">
-          <div class="type-heading">Specs Execution Summary</div>
+          <div class="type-heading"><span class = "summary-page-table-heading"></span> Execution Summary</div>
         <table class="pricing-table">
             <thead>
             <tr class="plan">
@@ -119,28 +118,28 @@
         <div id="chartdiv1" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
 
       </div>
-      <div>
+      <div id = "execution_details" style="">
         <div class="type-heading">Execution Specific Info</div>
 
         <table class="container">
             <tbody>
                 <tr>
-                    <td>Project</td>
+                    <td id="first-details">Project</td>
                     <td class="info"></td>
                     <td class="project"></td>
                 </tr>
                 <tr>
-                    <td>Environment</td>
+                    <td id="second-details">Environment</td>
                     <td class="info"></td>
                     <td class="env"></td>
                 </tr>
                 <tr>
-                    <td>Tags</td>
+                    <td id="third-details">Tags</td>
                     <td class="info"></td>
                     <td class="tags"></td>
                 </tr>
                 <tr>
-                    <td>Generated On</td>
+                    <td id="fourth-details">Generated On</td>
                     <td class="info"></td>
                     <td class="gt"></td>
                 </tr>
