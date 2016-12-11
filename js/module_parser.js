@@ -64,7 +64,7 @@
                     confidence_color = "orange";
                 }
                 else {
-                    confidence_color = "#E32D2D";
+                    confidence_color = "#d65544";
                 }
 
                $("#pricing-table").append(
@@ -99,7 +99,7 @@
                             "balloonText": "[[title]] in '[[category]]':[[value]]",
                             "fillAlphas": 1,
                             "id": "AmGraph-1",
-                            "title": "Scenarios Passed",
+                            "title": "Tests Passed",
                             "type": "column",
                             "valueField": "column-1",
                             "lineColor": "#FFFFFF",
@@ -109,7 +109,7 @@
                             "balloonText": "[[title]] in '[[category]]':[[value]]",
                             "fillAlphas": 1,
                             "id": "AmGraph-2",
-                            "title": "Scenarios Failed",
+                            "title": "Tests Failed",
                             "type": "column",
                             "valueField": "column-2",
                             "lineColor": "#FFFFFF",
