@@ -10,6 +10,10 @@
     <script type="text/javascript" src="../js/amcharts.js"></script>
     <script type="text/javascript" src="../js/pie.js"></script>
     <script type="text/javascript" src="../js/swipe.js"></script>
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+
+    <link rel="stylesheet" href="../css/bootstrap-vertical-menu.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/chart_style.css">
@@ -35,6 +39,43 @@
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </head>
 <body>
+    <nav class="navbar navbar-vertical-left">
+    <ul class="nav navbar-nav">
+      <li>
+        <a href>
+          <i class="fa fa-fw fa-lg fa-home"></i> 
+          <span>Home</span>
+        </a>
+      </li>
+      <li>
+        <a href>
+          <i class="fa fa-fw fa-lg fa-briefcase"></i> 
+          <span>Suite Summary</span>
+        </a>
+      </li>
+      <li>
+        <a href>
+          <i class="fa fa-fw fa-lg fa-newspaper-o"></i> 
+          <span>Specs Summary</span>
+        </a>
+      </li>
+      <li>
+        <a href>
+          <i class="fa fa-fw fa-lg fa-line-chart"></i> 
+          <span>Test trends</span>
+        </a>
+      </li>
+    </ul></nav>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script>
+    $(document).ready(function() {
+      $('a').click(function(event) {
+        $('a').removeClass('selected');
+        $(this).addClass('selected');
+        event.preventDefault();
+      })
+    });
+  </script>
 <br>
 <br>
 <div id="heading_common">
