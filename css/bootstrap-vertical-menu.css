@@ -46,6 +46,7 @@
 
 .navbar-vertical-left ul.navbar-nav > li > a {
   color: #ecf0f1;
+  text-decoration: none;
 }
 
 .navbar-vertical-left ul.navbar-nav > li > a:hover,
@@ -121,6 +122,7 @@
     text-align: center;
     height: 50px;
     line-height: 30px;
+    text-decoration: none;
   }
 
   .navbar-vertical-left ul.navbar-nav > li > a > i.fa {
