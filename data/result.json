@@ -32,7 +32,7 @@
           "name": "setup",
           "outcome": "passed"
         },
-        "duration": 0.4688289165496826,
+        "duration": 18.688289165496826,
         "outcome": "failed"
       },
       {
@@ -42,7 +42,7 @@
           "outcome": "passed"
         },
         "teardown": {
-          "duration": 0.00007700920104980469,
+          "duration": 17.700920104980469,
           "name": "teardown",
           "outcome": "passed"
         },
@@ -53,7 +53,7 @@
           "name": "setup",
           "outcome": "passed"
         },
-        "duration": 1.552753210067749,
+        "duration": 6.552753210067749,
         "outcome": "passed"
       },
       {
@@ -75,7 +75,7 @@
           "name": "setup",
           "outcome": "passed"
         },
-        "duration": 1.857598066329956,
+        "duration": 8.857598066329956,
         "outcome": "failed"
       },
       {
@@ -90,14 +90,14 @@
           "name": "teardown",
           "outcome": "passed"
         },
-        "name": "api/tests/test_api_home_page.py::HomePageAPITests::test_user_can_not_delete_an_opportunity_with_nonexistent_id",
+        "name": "api/tests/test_api_home_page.py::HomePageAPITests::test_user_can_not_delete_an_opp_with_id",
         "run_index": 6,
         "setup": {
           "duration": 0.00024008750915527344,
           "name": "setup",
           "outcome": "passed"
         },
-        "duration": 0.7204082012176514,
+        "duration": 3.7204082012176514,
         "outcome": "failed"
       },
       {
@@ -112,14 +112,14 @@
           "name": "teardown",
           "outcome": "passed"
         },
-        "name": "api/tests/test_api_home_page.py::HomePageAPITests::test_user_can_not_create_a_new_opportunity_with_blank_name",
+        "name": "api/tests/test_api_home_page.py::HomePageAPITests::test_create_a_new_opp_with_blank_name",
         "run_index": 2,
         "setup": {
           "duration": 0.0002789497375488281,
           "name": "setup",
           "outcome": "passed"
         },
-        "duration": 10.704931020736694,
+        "duration": 2.704931020736694,
         "outcome": "failed"
       },
       {
@@ -134,7 +134,7 @@
           "name": "teardown",
           "outcome": "passed"
         },
-        "name": "api/tests/test_api_home_page.py::HomePageAPITests::test_user_can_not_filter_with_invalid_cdt_id",
+        "name": "api/tests/test_api_home_page.py::HomePageAPITests::test_filter_with_invalid_cdt_id",
         "run_index": 7,
         "setup": {
           "duration": 0.0002589225769042969,
@@ -151,7 +151,7 @@
           "outcome": "passed"
         },
         "teardown": {
-          "duration": 0.00024819374084472656,
+          "duration": 1.80024819374084472656,
           "name": "teardown",
           "outcome": "passed"
         },
@@ -162,7 +162,7 @@
           "name": "setup",
           "outcome": "passed"
         },
-        "duration": 11.64709186553955,
+        "duration": 7.64709186553955,
         "outcome": "passed"
       },
       {
@@ -214,7 +214,7 @@
           "name": "teardown",
           "outcome": "passed"
         },
-        "name": "api/tests/test_api_home_page.py::HomePageAPITests::test_user_can_not_delete_an_opportunity_with_invalid_id",
+        "name": "api/tests/test_api_home_page.py::HomePageAPITests::test__delete_an_opp_with_invalid_id",
         "run_index": 5,
         "setup": {
           "duration": 0.00009989738464355469,
@@ -222,7 +222,7 @@
           "longrepr": "('api/tests/test_api_home_page.py', 142, 'Skipped: no way of currently testing this')",
           "outcome": "skipped"
         },
-        "duration": 0.0002808570861816406,
+        "duration": 1.0002808570861816406,
         "outcome": "skipped"
       }
     ]
