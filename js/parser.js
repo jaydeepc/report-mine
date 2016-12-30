@@ -95,7 +95,7 @@
               data = parseFloat(data / 60);
               var g = new JustGage({
               id: chart_id,
-              value: data,
+              value: 100,
               min: 0,
               max: 120,
               title: "Execution Time Status",

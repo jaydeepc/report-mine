@@ -68,15 +68,14 @@
                 }
 
                $("#pricing-table").append(
-              '<div class="plan" id="'+ ready_to_release +'"><h3>' + key + '<span>' + pass_percent + '%</span></h3>' +
-              '<div class="confidence" style="color: white; background-color: ' + confidence_color + '">' + 'Confidence' + '</div>' +
-              '<ul>' +
-                  '<li><b>' + modules[key]['total'] + '</b> - Total Number of Tests</li>' +
-                  '<li><b>' + modules[key]['pass_count'] + '</b> - Tests Passed</li>' +
-                  '<li><b>' + modules[key]['fail_count'] + '</b> - Tests Failed</li>' +
-                  '<li><b>' + modules[key]['skip_count'] + '</b> - Tests Skipped</li>' +
-                  '</ul></div>'
-
+                  '<div class="plan" id="'+ ready_to_release +'"><h3>' + key + '<span>' + pass_percent + '%</span></h3>' +
+                  '<div class="confidence" style="color: white; background-color: ' + confidence_color + '">' + 'Confidence' + '</div>' +
+                  '<ul>' +
+                      '<li><b>' + modules[key]['total'] + '</b> - Total Number of Tests</li>' +
+                      '<li><b>' + modules[key]['pass_count'] + '</b> - Tests Passed</li>' +
+                      '<li><b>' + modules[key]['fail_count'] + '</b> - Tests Failed</li>' +
+                      '<li><b>' + modules[key]['skip_count'] + '</b> - Tests Skipped</li>' +
+                      '</ul></div>'
               );
 
         }
@@ -84,60 +83,60 @@
     });
  });
 
-    function createBar(data_array){
-            AmCharts.makeChart("chartdiv",
+function createBar(data_array){
+    AmCharts.makeChart("chartdiv",
+        {
+            "type": "serial",
+            "categoryField": "category",
+            "startDuration": 1,
+            "categoryAxis": {
+                "gridPosition": "start"
+            },
+            "trendLines": [],
+            "graphs": [
                 {
-                    "type": "serial",
-                    "categoryField": "category",
-                    "startDuration": 1,
-                    "categoryAxis": {
-                        "gridPosition": "start"
-                    },
-                    "trendLines": [],
-                    "graphs": [
-                        {
-                            "balloonText": "[[title]] in '[[category]]':[[value]]",
-                            "fillAlphas": 1,
-                            "id": "AmGraph-1",
-                            "title": "Tests Passed",
-                            "type": "column",
-                            "valueField": "column-1",
-                            "lineColor": "#FFFFFF",
-                            "fillColors": "#75d644"
-                        },
-                        {
-                            "balloonText": "[[title]] in '[[category]]':[[value]]",
-                            "fillAlphas": 1,
-                            "id": "AmGraph-2",
-                            "title": "Tests Failed",
-                            "type": "column",
-                            "valueField": "column-2",
-                            "lineColor": "#FFFFFF",
-                            "fillColors": "#f26f6f"
-                        }
-                    ],
-                    "guides": [],
-                    "valueAxes": [
-                        {
-                            "id": "ValueAxis-1",
-                            "stackType": "regular",
-                            "title": "Number of Scenarios"
-                        }
-                    ],
-                    "allLabels": [],
-                    "balloon": {},
-                    "legend": {
-                        "enabled": true,
-                        "useGraphSettings": true
-                    },
-                    "titles": [
-                        {
-                            "id": "Title-1",
-                            "size": 15,
-                            "text": ""
-                        }
-                    ],
-                    "dataProvider": data_array
+                    "balloonText": "[[title]] in '[[category]]':[[value]]",
+                    "fillAlphas": 1,
+                    "id": "AmGraph-1",
+                    "title": "Tests Passed",
+                    "type": "column",
+                    "valueField": "column-1",
+                    "lineColor": "#FFFFFF",
+                    "fillColors": "#75d644"
+                },
+                {
+                    "balloonText": "[[title]] in '[[category]]':[[value]]",
+                    "fillAlphas": 1,
+                    "id": "AmGraph-2",
+                    "title": "Tests Failed",
+                    "type": "column",
+                    "valueField": "column-2",
+                    "lineColor": "#FFFFFF",
+                    "fillColors": "#f26f6f"
                 }
-            );
+            ],
+            "guides": [],
+            "valueAxes": [
+                {
+                    "id": "ValueAxis-1",
+                    "stackType": "regular",
+                    "title": "Number of Scenarios"
+                }
+            ],
+            "allLabels": [],
+            "balloon": {},
+            "legend": {
+                "enabled": true,
+                "useGraphSettings": true
+            },
+            "titles": [
+                {
+                    "id": "Title-1",
+                    "size": 15,
+                    "text": ""
+                }
+            ],
+            "dataProvider": data_array
+        }
+    );
 }

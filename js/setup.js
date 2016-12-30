@@ -10,4 +10,6 @@ $(document).ready(function() {
 
   //Hide data label in gaugechart
   $(".highcharts-label").hide();
+
+  //setup config for gauguechart
 });
