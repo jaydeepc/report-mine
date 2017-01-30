@@ -12,8 +12,8 @@
             }
 
                $.getJSON('../data/result.json', function(jd) {
-                    total_failed_tests = jd.report.summary.failed;
-                    total_skipped_tests = jd.report.summary.skipped;
+                    total_failed_tests = jd.report.summary.failed || 0;
+                    total_skipped_tests = jd.report.summary.skipped || 0;
                     total_pass_tests = jd.report.summary.passed;
                     total_tests = jd.report.summary.num_tests;
 
@@ -92,12 +92,12 @@
                 }
 
             function createSpeedoMeter(chart_id, data) {
-              data = parseFloat(data / 60);
+              data = data; //parseFloat(data / 60);
               var g = new JustGage({
               id: chart_id,
-              value: 100,
+              value: data,
               min: 0,
-              max: 120,
+              max: 180,
               title: "Execution Time Status",
               label: "Time in Minutes",
               width: 600,

@@ -1,31 +1,100 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title></title>
+    <meta charset="utf-8">
+    <title>Report</title>
     <script type = "text/javascript"
             src = "../js/jquery-1.12.1.min.js"></script>
-    <link rel="stylesheet" href="../css/accor.css">
-    <link rel="stylesheet" href="../css/heading.css">
-    <link href='https://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
-    <script type = "text/javascript" language = "javascript" src="../js/stacktrace.js"></script>
-    <script type = "text/javascript" language = "javascript" src="../js/accor.js"></script>
-    <link rel="stylesheet" href="../css/card_open.css">
+    <script>
+        var polyfilter_scriptpath = "../js/css-filters-polyfill.js";
+    </script>
+
+    <script type = "text/javascript" language = "javascript" src="../js/setup.js"></script>
+    <script type = "text/javascript" language = "javascript" src="../js/test_results.js"></script>
+
+    <script src="../js/modernizr.custom.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/default.css" />
+    <link rel="stylesheet" type="text/css" href="../css/component.css" />
+
+    <link rel="stylesheet" href="../css/bootstrap-vertical-menu.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/jquery.dynatable.css">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <script src="../js/classie.js"></script>
+    <script src="../js/modalEffects.js"></script>
+    <script>
+        // this is important for IEs
+        var polyfilter_scriptpath = '../js/';
+    </script>
+    <script src="../js/cssParser.js"></script>
+    <script src="../js/css-filters-polyfill.js"></script>
+
+    <script>
+        function removeModal(){
+            $('#modal-12').removeClass('md-show');
+        }
+
+        function showModal(){
+            <!--alert($(this).attr('name'));-->
+            $('#modal-12').addClass('md-show');
+        }
+
+
+    </script>
+
+    <!--[if lte IE 9]><link rel="stylesheet" href="../css/ie.css"><![endif]-->
 </head>
 <body>
-<div id="heading">
-    <h1>Failed Specs</h1>
-    <div id="heading"><p>Click on the arrow to see the stacktrace</p></div>
+    <nav class="navbar navbar-vertical-left">
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="summary.html">
+          <i class="fa fa-fw fa-lg fa-home"></i>
+          <span>Home</span>
+        </a>
+      </li>
+      <li>
+        <a href>
+          <i class="fa fa-fw fa-lg fa-briefcase"></i>
+          <span>Suite Summary</span>
+        </a>
+      </li>
+      <li>
+        <a href="modules.html">
+          <i class="fa fa-fw fa-lg fa-newspaper-o"></i>
+          <span>Specs Summary</span>
+        </a>
+      </li>
+      <li>
+        <a href="test_execution_time_graph.html">
+            <i class="fa fa-fw fa-lg fa-line-chart"></i>
+            <span>Test trends</span>
+        </a>
+      </li>
+    </ul></nav>
+<br>
+<br>
+<div id="heading_common">
+    <h1>Failed Tests</h1>
+    <hr width="100%">
 </div>
-
-<div class="container">
-          <div class="accordion">
-            <dl>
-            </dl>
-          </div>
-</div>
-
-<footer style="margin-top: 70%; text-align:center;">
-</footer>
+<div id="heading_common"><p>List of all failing tests</p></div>
+<br>
+<br>
+    <table class="container">
+	<thead>
+		<tr>
+			<th><h1>Module Name</h1></th>
+			<th><h1>Test Name</h1></th>
+			<th><h1>Stack Trace</h1></th>
+			<th><h1>Artifacts</h1></th>
+		</tr>
+	</thead>
+	<tbody>
+	</tbody>
+</table>
+</body>
 </body>
 </html>

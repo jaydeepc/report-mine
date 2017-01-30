@@ -1,230 +1,184 @@
 {
   "report": {
+    "summary": {
+      "failed": 1,
+      "error": 1,
+      "duration": 124.0115430355072,
+      "passed": 6,
+      "num_tests": 8
+    },
+    "tests": [
+      {
+        "run_index": 4,
+        "duration": 2.417464256286621,
+        "name": "tests/matchcompetitivepositioning_tests/test_matchcompetitivepositioning_api.py::MatchCompetitivePositioningAPITests::test_number_columns_in_responses_of_mypricegroup_matches",
+        "outcome": "passed",
+        "call": {
+          "duration": 2.416774034500122,
+          "name": "call",
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 8.797645568847656e-05,
+          "name": "teardown",
+          "outcome": "passed"
+        },
+        "setup": {
+          "duration": 0.00030112266540527344,
+          "name": "setup",
+          "outcome": "passed"
+        }
+      },
+      {
+        "run_index": 5,
+        "duration": 2.0248000621795654,
+        "name": "tests/matchcompetitivepositioning_tests/test_matchcompetitivepositioning_api.py::MatchCompetitivePositioningAPITests::test_user_can_retrieve_details_of_mypricegroup_and_competitors",
+        "outcome": "passed",
+        "call": {
+          "duration": 2.024209976196289,
+          "name": "call",
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 8.177757263183594e-05,
+          "name": "teardown",
+          "outcome": "passed"
+        },
+        "setup": {
+          "duration": 0.0002541542053222656,
+          "name": "setup",
+          "outcome": "passed"
+        }
+      },
+      {
+        "run_index": 7,
+        "duration": 2.110193967819214,
+        "name": "tests/sell_through_tests/test_sell_through_api.py::SellThroughAPITests::test_user_can_retrieve_sell_through_details",
+        "outcome": "failed",
+        "call": {
+          "longrepr": "JD - self = <api.tests.sell_through_tests.test_sell_through_api.SellThroughAPITests testMethod=test_number_of_colums_retrieved_sell_through_details_is_37>\n\n    @pytest.mark.sell_through_api\n    @pytest.mark.smoke\n    def test_number_of_colums_retrieved_sell_through_details_is_37(self):\n        details = self.sell_through_client.get_sell_through_details_by_factID(self.planning_measure_id)\n        details_obj = details.object\n        self.assertEqual(len(details_obj.success.columns), 41, msg=ExceptionMessageGenerator.equality_exception(\n>               details, 41, len(details_obj.success.columns)))\nE       AssertionError: 43 != 41 : \nE       The Assertion has failed.\nE       *************************************************************************\nE       Expected: 41\nE       Actual: 43\nE       *****************************\nE       Request Details: \nE       *****************************\nE       URL: https://dev.periscope.mckinsey-solutions.com/tst2app2/price/price/api/in/facts/93955/sellthrough/day\nE       Method: GET\nE       payload: None\nE       *****************************\nE       Response Details: \nE       *****************************\nE       Body: <api.price_api_clients.sell_through_client.models.response.SellThroughResponse object at 0x107b5cf60>\n\ntests/sell_through_tests/test_sell_through_api.py:32: AssertionError",
+          "duration": 3.066580057144165,
+          "name": "call",
+          "outcome": "failed"
+        },
+        "teardown": {
+          "duration": 0.0003299713134765625,
+          "name": "teardown",
+          "outcome": "passed"
+        },
+        "setup": {
+          "duration": 0.00021600723266601562,
+          "name": "setup",
+          "outcome": "passed"
+        }
+      },
+      {
+        "run_index": 6,
+        "duration": 36.753559827804565,
+        "name": "tests/sell_through_tests/test_sell_through_api.py::SellThroughAPITests::test_number_of_colums_retrieved_sell_through_details_is_37",
+        "outcome": "failed",
+        "call": {
+          "longrepr": "self = <api.tests.sell_through_tests.test_sell_through_api.SellThroughAPITests testMethod=test_number_of_colums_retrieved_sell_through_details_is_37>\n\n    @pytest.mark.sell_through_api\n    @pytest.mark.smoke\n    def test_number_of_colums_retrieved_sell_through_details_is_37(self):\n        details = self.sell_through_client.get_sell_through_details_by_factID(self.planning_measure_id)\n        details_obj = details.object\n        self.assertEqual(len(details_obj.success.columns), 41, msg=ExceptionMessageGenerator.equality_exception(\n>               details, 41, len(details_obj.success.columns)))\nE       AssertionError: 43 != 41 : \nE       The Assertion has failed.\nE       *************************************************************************\nE       Expected: 41\nE       Actual: 43\nE       *****************************\nE       Request Details: \nE       *****************************\nE       URL: https://dev.periscope.mckinsey-solutions.com/tst2app2/price/price/api/in/facts/93955/sellthrough/day\nE       Method: GET\nE       payload: None\nE       *****************************\nE       Response Details: \nE       *****************************\nE       Body: <api.price_api_clients.sell_through_client.models.response.SellThroughResponse object at 0x107b5cf60>\n\ntests/sell_through_tests/test_sell_through_api.py:32: AssertionError",
+          "duration": 3.066580057144165,
+          "name": "call",
+          "outcome": "failed"
+        },
+        "teardown": {
+          "duration": 8.20159912109375e-05,
+          "name": "teardown",
+          "outcome": "passed"
+        },
+        "setup": {
+          "duration": 16.843448877334595,
+          "name": "setup",
+          "outcome": "passed"
+        }
+      },
+      {
+        "run_index": 1,
+        "duration": 54.37540578842163,
+        "name": "tests/events_api_tests/test_events_api.py::EventsAPITests::test_user_can_retrieve_event_details",
+        "outcome": "passed",
+        "call": {
+          "duration": 1.0761289596557617,
+          "name": "call",
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 0.00012683868408203125,
+          "name": "teardown",
+          "outcome": "passed"
+        },
+        "setup": {
+          "duration": 26.649574995040894,
+          "name": "setup",
+          "outcome": "passed"
+        }
+      },
+      {
+        "run_index": 0,
+        "duration": 40.348422050476074,
+        "name": "tests/event_price_volume_tests/test_preseason_force_price_volume_api.py::PriceVolumeAPITests::test_user_can_retrieve_price_volume_details",
+        "outcome": "error",
+        "teardown": {
+          "duration": 0.00011205673217773438,
+          "name": "teardown",
+          "outcome": "passed"
+        },
+        "setup": {
+          "longrepr": "cls = <class 'test_preseason_force_price_volume_api.PriceVolumeAPITests'>\n\n    @classmethod\n    def setUpClass(cls):\n        super(PriceVolumeAPITests, cls).setUpClass()\n        cls.planning_measure_id = cls.data_generator.fetch_planning_measure_id()[0]\n>       cls.event_end_day_key = cls.events_api_client.get_event_details_by_factID(cls.planning_measure_id).object.success.UpcomingEvent.eventEndDayKey\nE       AttributeError: 'NoneType' object has no attribute 'eventEndDayKey'\n\ntests/event_price_volume_tests/test_preseason_force_price_volume_api.py:14: AttributeError",
+          "duration": 20.17415499687195,
+          "name": "setup",
+          "outcome": "error"
+        }
+      },
+      {
+        "run_index": 3,
+        "duration": 57.39578580856323,
+        "name": "tests/matchcompetitivepositioning_tests/test_matchcompetitivepositioning_api.py::MatchCompetitivePositioningAPITests::test_number_columns_in_responses_of_competitors_matches",
+        "outcome": "passed",
+        "call": {
+          "duration": 1.3302171230316162,
+          "name": "call",
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 8.702278137207031e-05,
+          "name": "teardown",
+          "outcome": "passed"
+        },
+        "setup": {
+          "duration": 28.032740831375122,
+          "name": "setup",
+          "outcome": "passed"
+        }
+      },
+      {
+        "run_index": 2,
+        "duration": 38.00556492805481,
+        "name": "tests/force_breakup_tests/test_force_breakup_api.py::ForceBreakupAPITests::test_user_can_retrieve_force_breakup_details",
+        "outcome": "passed",
+        "call": {
+          "duration": 1.849289894104004,
+          "name": "call",
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 0.0001628398895263672,
+          "name": "teardown",
+          "outcome": "passed"
+        },
+        "setup": {
+          "duration": 18.07805609703064,
+          "name": "setup",
+          "outcome": "passed"
+        }
+      }
+    ],
+    "created_at": "2017-01-23 14:39:25.233946",
     "environment": {
       "Platform": "Darwin-15.3.0-x86_64-i386-64bit",
       "Python": "3.5.2"
-    },
-    "summary": {
-      "duration": 3234.79989897,
-      "num_tests": 10,
-      "failed": 6,
-      "skipped": 1,
-      "passed": 3
-    },
-    "created_at": "2016-12-09 20:48:17.916771",
-    "tests": [
-      {
-        "call": {
-          "duration": 0.4680900573730469,
-          "name": "call",
-          "longrepr": "self = <api.tests.test_api_home_page.HomePageAPITests testMethod=test_user_can_not_filter_with_non_existing_cdt_id>\n\n    @pytest.mark.home_page_api\n    def test_user_can_not_filter_with_non_existing_cdt_id(self):\n        filter_cdt_id = \"99999999\"\n        response = self.opportunity_api_client.get_filtered_opportunities(cdt_id=filter_cdt_id)\n        self.assertEquals(400, response.status_code, msg=\"The response code returned does not match expected value.\"\n                                                         \"Expected: {0}\"\n>                                                        \"Actual: {1}\".format(400, response.status_code))\nE       AssertionError: 400 != 200 : The response code returned does not match expected value.Expected: 400Actual: 200\n\napi/tests/test_api_home_page.py:63: AssertionError",
-          "outcome": "failed"
-        },
-        "teardown": {
-          "duration": 0.00010704994201660156,
-          "name": "teardown",
-          "outcome": "passed"
-        },
-        "name": "api/tests/test_api_home_page.py::HomePageAPITests::test_user_can_not_filter_with_non_existing_cdt_id",
-        "run_index": 8,
-        "setup": {
-          "duration": 0.0003159046173095703,
-          "name": "setup",
-          "outcome": "passed"
-        },
-        "duration": 18.688289165496826,
-        "outcome": "failed"
-      },
-      {
-        "call": {
-          "duration": 1.5519399642944336,
-          "name": "call",
-          "outcome": "passed"
-        },
-        "teardown": {
-          "duration": 17.700920104980469,
-          "name": "teardown",
-          "outcome": "passed"
-        },
-        "name": "api/tests/test_api_home_page.py::HomePageAPITests::test_user_can_delete_an_opportunity",
-        "run_index": 1,
-        "setup": {
-          "duration": 0.0003681182861328125,
-          "name": "setup",
-          "outcome": "passed"
-        },
-        "duration": 6.552753210067749,
-        "outcome": "passed"
-      },
-      {
-        "call": {
-          "duration": 1.8568809032440186,
-          "name": "call",
-          "longrepr": "self = <api.tests.test_api_home_page.HomePageAPITests testMethod=test_user_can_not_create_a_new_opportunity_with_invalid_cdt_type>\n\n    @pytest.mark.home_page_api\n    def test_user_can_not_create_a_new_opportunity_with_invalid_cdt_type(self):\n        cdt_type = \"abcd\"\n        opportunity_type = \"MANUAL\"\n        opportunity_name = \"api_created_opportunity_{0}\".format(random.randint(1, 100))\n        response = self.opportunity_api_client.create_opportunity(cdt_type, opportunity_type, opportunity_name)\n        self.assertEquals(400, response.status_code, msg=\"The response code returned does not match expected value.\"\n                                                         \"Expected: {0}\"\n>                                                        \"Actual: {1}\".format(400, response.status_code))\nE       AssertionError: 400 != 500 : The response code returned does not match expected value.Expected: 400Actual: 500\n\napi/tests/test_api_home_page.py:106: AssertionError",
-          "outcome": "failed"
-        },
-        "teardown": {
-          "duration": 0.00008916854858398438,
-          "name": "teardown",
-          "outcome": "passed"
-        },
-        "name": "api/tests/test_api_home_page.py::HomePageAPITests::test_user_can_not_create_a_new_opportunity_with_invalid_cdt_type",
-        "run_index": 3,
-        "setup": {
-          "duration": 0.0003139972686767578,
-          "name": "setup",
-          "outcome": "passed"
-        },
-        "duration": 8.857598066329956,
-        "outcome": "failed"
-      },
-      {
-        "call": {
-          "duration": 0.7198469638824463,
-          "name": "call",
-          "longrepr": "self = <api.tests.test_api_home_page.HomePageAPITests testMethod=test_user_can_not_delete_an_opportunity_with_nonexistent_id>\n\n    @pytest.mark.home_page_api\n    def test_user_can_not_delete_an_opportunity_with_nonexistent_id(self):\n        delete_opp = self.opportunity_api_client.delete_opportunity([9999])\n        self.assertEquals(404, delete_opp.status_code, msg=\"The response code returned does not match expected value.\"\n                                                         \"Expected: {0}\"\n>                                                        \"Actual: {1}\".format(404, delete_opp.status_code))\nE       AssertionError: 404 != 200 : The response code returned does not match expected value.Expected: 404Actual: 200\n\napi/tests/test_api_home_page.py:156: AssertionError",
-          "outcome": "failed"
-        },
-        "teardown": {
-          "duration": 0.00008106231689453125,
-          "name": "teardown",
-          "outcome": "passed"
-        },
-        "name": "api/tests/test_api_home_page.py::HomePageAPITests::test_user_can_not_delete_an_opp_with_id",
-        "run_index": 6,
-        "setup": {
-          "duration": 0.00024008750915527344,
-          "name": "setup",
-          "outcome": "passed"
-        },
-        "duration": 3.7204082012176514,
-        "outcome": "failed"
-      },
-      {
-        "call": {
-          "duration": 10.704282999038696,
-          "name": "call",
-          "longrepr": "self = <api.tests.test_api_home_page.HomePageAPITests testMethod=test_user_can_not_create_a_new_opportunity_with_blank_name>\n\n    @pytest.mark.home_page_api\n    def test_user_can_not_create_a_new_opportunity_with_blank_name(self):\n        cdt_type = \"1\"\n        opportunity_type = \"MANUAL\"\n        opportunity_name = \"\"\n        response = self.opportunity_api_client.create_opportunity(cdt_type, opportunity_type, opportunity_name)\n        self.assertEquals(400, response.status_code, msg=\"The response code returned does not match expected value.\"\n                                                         \"Expected: {0}\"\n>                                                        \"Actual: {1}\".format(400, response.status_code))\nE       AssertionError: 400 != 200 : The response code returned does not match expected value.Expected: 400Actual: 200\n\napi/tests/test_api_home_page.py:126: AssertionError",
-          "outcome": "failed"
-        },
-        "teardown": {
-          "duration": 0.00009012222290039062,
-          "name": "teardown",
-          "outcome": "passed"
-        },
-        "name": "api/tests/test_api_home_page.py::HomePageAPITests::test_create_a_new_opp_with_blank_name",
-        "run_index": 2,
-        "setup": {
-          "duration": 0.0002789497375488281,
-          "name": "setup",
-          "outcome": "passed"
-        },
-        "duration": 2.704931020736694,
-        "outcome": "failed"
-      },
-      {
-        "call": {
-          "duration": 0.46416807174682617,
-          "name": "call",
-          "longrepr": "self = <api.tests.test_api_home_page.HomePageAPITests testMethod=test_user_can_not_filter_with_invalid_cdt_id>\n\n    @pytest.mark.home_page_api\n    def test_user_can_not_filter_with_invalid_cdt_id(self):\n        filter_cdt_id = \"abcd%dcf\"\n        response = self.opportunity_api_client.get_filtered_opportunities(cdt_id=filter_cdt_id)\n        self.assertEquals(400, response.status_code, msg=\"The response code returned does not match expected value.\"\n                                                         \"Expected: {0}\"\n>                                                        \"Actual: {1}\".format(400, response.status_code))\nE       AssertionError: 400 != 200 : The response code returned does not match expected value.Expected: 400Actual: 200\n\napi/tests/test_api_home_page.py:55: AssertionError",
-          "outcome": "failed"
-        },
-        "teardown": {
-          "duration": 0.00010895729064941406,
-          "name": "teardown",
-          "outcome": "passed"
-        },
-        "name": "api/tests/test_api_home_page.py::HomePageAPITests::test_filter_with_invalid_cdt_id",
-        "run_index": 7,
-        "setup": {
-          "duration": 0.0002589225769042969,
-          "name": "setup",
-          "outcome": "passed"
-        },
-        "duration": 0.4647948741912842,
-        "outcome": "failed"
-      },
-      {
-        "call": {
-          "duration": 11.64627194404602,
-          "name": "call",
-          "outcome": "passed"
-        },
-        "teardown": {
-          "duration": 1.80024819374084472656,
-          "name": "teardown",
-          "outcome": "passed"
-        },
-        "name": "api/tests/test_api_home_page.py::HomePageAPITests::test_user_can_retrieve_all_opportunities",
-        "run_index": 9,
-        "setup": {
-          "duration": 0.00028586387634277344,
-          "name": "setup",
-          "outcome": "passed"
-        },
-        "duration": 7.64709186553955,
-        "outcome": "passed"
-      },
-      {
-        "call": {
-          "duration": 12.255005836486816,
-          "name": "call",
-          "outcome": "passed"
-        },
-        "teardown": {
-          "duration": 0.00011301040649414062,
-          "name": "teardown",
-          "outcome": "passed"
-        },
-        "name": "api/tests/test_api_home_page.py::HomePageAPITests::test_user_can_create_a_new_opportunity",
-        "run_index": 0,
-        "setup": {
-          "duration": 0.018386125564575195,
-          "name": "setup",
-          "outcome": "passed"
-        },
-        "duration": 12.291891098022461,
-        "outcome": "passed"
-      },
-      {
-        "call": {
-          "duration": 14.656501770019531,
-          "name": "call",
-          "longrepr": "self = <api.tests.test_api_home_page.HomePageAPITests testMethod=test_user_can_not_create_a_new_opportunity_with_invalid_opportunity_type>\n\n    @pytest.mark.home_page_api\n    def test_user_can_not_create_a_new_opportunity_with_invalid_opportunity_type(self):\n        cdt_type = \"1\"\n        opportunity_type = \"abcd\"\n        opportunity_name = \"api_created_opportunity_{0}\".format(random.randint(1, 100))\n        response = self.opportunity_api_client.create_opportunity(cdt_type, opportunity_type, opportunity_name)\n        self.assertEquals(400, response.status_code, msg=\"The response code returned does not match expected value.\"\n                                                         \"Expected: {0}\"\n>                                                        \"Actual: {1}\".format(400, response.status_code))\nE       AssertionError: 400 != 500 : The response code returned does not match expected value.Expected: 400Actual: 500\n\napi/tests/test_api_home_page.py:116: AssertionError",
-          "outcome": "failed"
-        },
-        "teardown": {
-          "duration": 0.00010180473327636719,
-          "name": "teardown",
-          "outcome": "passed"
-        },
-        "name": "api/tests/test_api_home_page.py::HomePageAPITests::test_user_can_not_create_a_new_opportunity_with_invalid_opportunity_type",
-        "run_index": 4,
-        "setup": {
-          "duration": 0.00022721290588378906,
-          "name": "setup",
-          "outcome": "passed"
-        },
-        "duration": 14.657058000564575,
-        "outcome": "failed"
-      },
-      {
-        "teardown": {
-          "duration": 0.00008106231689453125,
-          "name": "teardown",
-          "outcome": "passed"
-        },
-        "name": "api/tests/test_api_home_page.py::HomePageAPITests::test__delete_an_opp_with_invalid_id",
-        "run_index": 5,
-        "setup": {
-          "duration": 0.00009989738464355469,
-          "name": "setup",
-          "longrepr": "('api/tests/test_api_home_page.py', 142, 'Skipped: no way of currently testing this')",
-          "outcome": "skipped"
-        },
-        "duration": 1.0002808570861816406,
-        "outcome": "skipped"
-      }
-    ]
+    }
   }
 }
