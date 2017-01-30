@@ -33,12 +33,18 @@
 
     <script>
         function removeModal(){
-            $('#modal-12').removeClass('md-show');
+            $('#modal').removeClass('show');
         }
 
-        function showModal(){
-            <!--alert($(this).attr('name'));-->
-            $('#modal-12').addClass('md-show');
+        function showModal(i){
+            var header = $('<h4>Console Error</h4>');
+            var body = $('<pre>'+test_list[i].call.longrepr.trim()+'</pre>');
+            var footer = $("<button class='md-close' onclick='removeModal();'>Close</button>");
+            $('#modal-container').html('');
+            $('#modal-container').append(header);
+            $('#modal-container').append(body);
+            $('#modal-container').append(footer);
+            $('#modal').addClass('show');
         }
 
 
@@ -95,6 +101,7 @@
 	<tbody>
 	</tbody>
 </table>
+<div id="modal"><div id="modal-container"></div></div>
 </body>
 </body>
 </html>
