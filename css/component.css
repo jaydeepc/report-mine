@@ -4,7 +4,7 @@
     right: 0;
     left: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     z-index: 999;
     display: none;
 }
@@ -16,7 +16,7 @@
     position: fixed;
     top: 0;
     right: 0;
-    left: 0;
+    left: 30%;
     bottom: 0;
     margin: auto;
     max-width: 80%;
@@ -24,6 +24,5 @@
     overflow: auto;
     z-index: 9999;
     color: #c00;
-    background: #fff;
     padding: 20px;
 }

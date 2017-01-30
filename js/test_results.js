@@ -1,4 +1,4 @@
-$(window).load(function() {
+$(document).ready(function() {
 
     $.getJSON('../data/result.json', function(jd) {
 
@@ -18,9 +18,24 @@ $(window).load(function() {
                 "</td></tr>");
               }
             }
+        }).then(function(){
+                var url = window.location.href;
+                hash = url.split("?")[1];
+                if(hash !== undefined){
+                    filter_module = hash.split("=")[1];
+                    var table = document.querySelector("table");
+                    var rows = table.rows;
+                    for (var i = 1; i < rows.length; i++) {
+                        if(rows[i].cells[0].innerHTML != filter_module){
+                            rows[i].remove();
+                            i = i - 1;
+                        }
+                    }
+                }
         });
 
-    });
+
+});
 
 
 function fetch_module_name(name_string){
