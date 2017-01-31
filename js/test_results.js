@@ -34,8 +34,23 @@ $(document).ready(function() {
                 }
         });
 
-
 });
+
+function removeModal(){
+    $('#modal').removeClass('show');
+}
+function showModal(i){
+    var header = $('<h2>'+ fetch_module_name(test_list[i].name) +' : ' + fetch_test_name(test_list[i].name) +'</h2>');
+    var body = $('<pre>'+test_list[i].call.longrepr.trim()+'</pre>');
+    var footer = $("<button class='md-close' onclick='removeModal();'>Close</button>");
+    $('#modal-header').html('');
+    $('#modal-container').html('');
+    $('#modal-header').append(header);
+    $('#modal-container').append(body);
+    $('#modal-header').append(footer);
+    $('#modal').addClass('show');
+}
+
 
 
 function fetch_module_name(name_string){

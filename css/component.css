@@ -12,17 +12,34 @@
     display: block;
 }
 
+#modal-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 95%;
+    overflow: auto;
+    z-index: 9999;
+    color: #c00;
+    padding: 20px;
+}
+
 #modal-container {
     position: fixed;
     top: 0;
     right: 0;
-    left: 30%;
+    left: 0;
     bottom: 0;
     margin: auto;
     max-width: 80%;
     max-height: 80%;
     overflow: auto;
     z-index: 9999;
-    color: #c00;
+    color: #ecf0f1;
     padding: 20px;
+    font-family: monospace;
+    font-size: 14px;
 }
