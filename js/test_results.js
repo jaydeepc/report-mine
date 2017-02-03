@@ -3,6 +3,15 @@ $(document).ready(function() {
     $.getJSON('../data/result.json', function(jd) {
 
         test_list = jd.report.tests;
+
+        table_creator = {
+            0:{"Module Name": "module"},
+            1:{"Test Name": "test_name"},
+            2:{"Status": "status"},
+            3:{"Stack Trace": "stacktrace"},
+            4: {"Artifact": "atrifact"}
+        };
+
         for(i=0; i<test_list.length; i++){
             $(".container tbody").append("<tr id='table-row-"+i+"'><td>" + fetch_module_name(test_list[i].name)
             +
@@ -31,13 +40,16 @@ $(document).ready(function() {
                         key_val = query_param_list[i].split("=");
                         param_dict[key_val[0]] = key_val[1];
                     }
-
                     var table = document.querySelector("table");
                     var rows = table.rows;
-                    for (var i = 1; i < rows.length; i++) {
-                        if((rows[i].cells[0].innerHTML != param_dict["module"]) || (rows[i].cells[2].innerHTML != param_dict["status"])){
-                            rows[i].remove();
-                            i = i - 1;
+
+                    for (var key in param_dict){
+                        column_index = find_pos_from_filter_key(table_creator, key);
+                        for (var i = 1; i < rows.length; i++) {
+                            if((rows[i].cells[column_index].innerHTML != param_dict[key])){
+                                rows[i].remove();
+                                i = i - 1;
+                            }
                         }
                     }
                 }
@@ -78,5 +90,13 @@ function fetch_test_name(name_string){
 
 function has_artifact(){
     return true;
+}
+
+function find_pos_from_filter_key(dict_val, filter_key){
+    for (var key in dict_val){
+        if (dict_val[key][Object.keys(dict_val[key])[0]] == filter_key){
+            return key;
+        }
+    }
 }
 
