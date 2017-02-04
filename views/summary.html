@@ -96,13 +96,13 @@
             </tr>
             <tr class="price">
                 <td class="green">
-                    <a href="pass.html">Check</a>
+                    <a href="test_result.html?status=passed">Check</a>
                 </td>
                 <td class="red">
-                    <a href="failure_1.html">Check</a>
+                    <a href="test_result.html?status=failed">Check</a>
                 </td>
                 <td class="yellow">
-                    <a href="skip.html">Check</a>
+                    <a href="test_result.html?status=skipped">Check</a>
                 </td>
             </tr>
             </thead>
@@ -177,10 +177,10 @@
   </div>
 </div>
 
-<div style='text-align:center;padding-top:-20px;'>
+<div style='text-align:center;'>
 
-  <button onclick='mySwipe.prev()'>prev</button>
-  <button onclick='mySwipe.next()'>next</button>
+  <button class="prev" onclick='mySwipe.prev()'>prev</button>
+  <button class="next" onclick='mySwipe.next()'>next</button>
 
 </div>
 <script type="text/javascript" src="../js/swiping.js"></script>

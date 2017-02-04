@@ -68,23 +68,39 @@
                 }
 
                var failed_link = "";
+               var passed_link = "";
+               var skipped_link = "";
 
                if (modules[key]['fail_count'] > 0){
-                    failed_link = "<li><b><a href='failure_1.html?module=" + key + "'>" + modules[key]['fail_count'] + "</b> - Tests Failed</li></a>";
+                    failed_link = "<li><b><a href='test_result.html?module=" + key + "'>" + modules[key]['fail_count'] + "</b> - Tests Failed</li></a>";
                }
                else{
                     failed_link = "<li><b>" + modules[key]['fail_count'] + "</b> - Tests Failed</li>";
                }
 
+               if (modules[key]['pass_count'] > 0){
+                    passed_link = "<li><b><a href='test_result.html?module=" + key + "&status=passed'>" + modules[key]['pass_count'] + "</b> - Tests Passed</li></a>";
+               }
+               else{
+                    passed_link = "<li><b>" + modules[key]['pass_count'] + "</b> - Tests Passed</li>";
+               }
+
+               if (modules[key]['skip_count'] > 0){
+                    skipped_link = "<li><b><a href='test_result.html?module=" + key + "&status=skipped'>" + modules[key]['skip_count'] + "</b> - Tests Skipped</li></a>";
+               }
+               else{
+                    skipped_link = "<li><b>" + modules[key]['skip_count'] + "</b> - Tests Skipped</li>";
+               }
+
+
                $("#pricing-table").append(
                   '<div class="plan" id="'+ ready_to_release +'"><h3>' + key + '<span>' + pass_percent + '%</span></h3>' +
                   '<div class="confidence" style="color: white; background-color: ' + confidence_color + '">' + 'Confidence' + '</div>' +
                   '<ul>' +
-                      '<li><b>' + modules[key]['total'] + '</b> - Total Number of Tests</li>' +
-                      '<li><b>' + modules[key]['pass_count'] + '</b> - Tests Passed</li>' +
+                      '<li><b><a href=\'test_result.html?module=' + key + '\'>' + modules[key]['total'] + '</b> - Total Number of Tests</li></a>' +
+                       passed_link +
                        failed_link +
-                      '<li><b>' + modules[key]['skip_count'] + '</b> - Tests Skipped</li>' +
-                      '</ul></div>'
+                       skipped_link
               );
 
         }

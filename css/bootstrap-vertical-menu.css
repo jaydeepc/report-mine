@@ -40,7 +40,7 @@
 /* Colors */
 
 .navbar-vertical-left {
-  background: #333333;
+  background: rgba(51, 51, 51, 0.77);
   color: #ecf0f1;
 }
 
@@ -61,6 +61,7 @@
 /* Animation */
 
 .navbar-vertical-left {
+        z-index: 5;
   -webkit-transition: -webkit-transform .3s;
      -moz-transition:    -moz-transform .3s;
           transition:         transform .3s;

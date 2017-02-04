@@ -97,9 +97,9 @@
               id: chart_id,
               value: data,
               min: 0,
-              max: 180,
+              max: 600,
               title: "Execution Time Status",
-              label: "Time in Minutes",
+              label: "Time in Seconds",
               width: 600,
               height: 400
               });
