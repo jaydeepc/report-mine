@@ -42,12 +42,19 @@ $(document).ready(function() {
                     }
                     var table = document.querySelector("table");
                     var rows = table.rows;
-
-                    for (var key in param_dict){
-                        $("#sub_heading").append("<p>"+key+"="+param_dict[key]+"</p>");
-                        column_index = find_pos_from_filter_key(table_creator, key);
+                    var separator = " "
+                    keys = Object.keys(param_dict)
+                    if (keys.length > 1){
+                        separator = ", "
+                    }
+                    for (var j=0; j<keys.length; j++){
+                        if (j == (keys.length -1)){
+                            var separator = ""
+                        }
+                        $(".filter-name").append(" "+ first_to_uppercase(keys[j])+": "+first_to_uppercase(param_dict[keys[j]]) + separator);
+                        column_index = find_pos_from_filter_key(table_creator, keys[j]);
                         for (var i = 1; i < rows.length; i++) {
-                            if((rows[i].cells[column_index].innerHTML != param_dict[key])){
+                            if((rows[i].cells[column_index].innerHTML != param_dict[keys[j]])){
                                 rows[i].remove();
                                 i = i - 1;
                             }
@@ -116,5 +123,11 @@ function find_pos_from_filter_key(dict_val, filter_key){
             return key;
         }
     }
+}
+
+function first_to_uppercase(str) {
+    return (str + '').replace(/^([a-z])|\s+([a-z])/g, function ($1) {
+        return $1.toUpperCase();
+    });
 }
 
