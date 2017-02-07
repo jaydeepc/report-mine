@@ -1,0 +1,23 @@
+{
+  "name": "report-mine",
+  "version": "0.0.1",
+  "description": "A reporting tool to visualise outputs from automated tests across multiple testing tools",
+  "keywords": [
+    "report",
+    "reporting",
+    "functional",
+    "test",
+    "testing",
+    "pytest"
+  ],
+  "author": "Jaydeep Chakrabarty <jaydeep.c1@gmail.com>",
+  "contributors": [{
+  "name": "Harinee Muralinath",
+  "email": "harinee8@gmail.com"
+}],
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/jaydeepc/report_pytest"
+},
+  "license": "MIT"
+}
