@@ -44,6 +44,7 @@ $(document).ready(function() {
                     var rows = table.rows;
 
                     for (var key in param_dict){
+                        $("#sub_heading").append("<p>"+key+"="+param_dict[key]+"</p>");
                         column_index = find_pos_from_filter_key(table_creator, key);
                         for (var i = 1; i < rows.length; i++) {
                             if((rows[i].cells[column_index].innerHTML != param_dict[key])){
@@ -89,7 +90,6 @@ function showModal(i){
     $('#modal-header').append(footer);
     $('#modal').addClass('show');
 }
-
 
 
 function fetch_module_name(name_string){
