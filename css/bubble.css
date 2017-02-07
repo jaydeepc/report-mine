@@ -1,0 +1,105 @@
+.circle{
+    background-color: rgba(101, 162, 216, 0.34);
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 150px;
+    float: left;
+    margin-left: 181px;
+}
+
+.circle.info-2{
+    background-color: rgba(255, 179, 0, 0.51);
+}
+
+.circle.info-2:hover{
+    background-color: rgb(255, 179, 0);
+}
+
+.circle.info-3{
+    background-color: rgba(118, 142, 232, 0.35);
+}
+
+.circle.info-3:hover{
+    background-color: rgb(118, 142, 232);
+}
+
+.circle.info-4{
+    background-color: rgba(187, 232, 118, 0.35);
+}
+
+.circle.info-4:hover{
+    background-color: rgba(187, 232, 118, 0.98);
+}
+
+.circle.info-5{
+    background-color: rgba(124, 208, 115, 0.97);
+}
+
+.circle.info-5:hover{
+    background-color: rgba(239, 13, 13, 0.51);
+}
+
+.facts{
+    overflow: hidden;
+}
+
+.circle:hover{
+  background: #39b3d7;
+  color: #ffffff;
+}
+
+.fact-heading{
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 15px;
+    font-family: times, Times New Roman, times-roman, georgia, serif;
+    padding-top: 40px;
+}
+
+.time-exe{
+    font-size: 68px;
+}
+
+.time-unit{
+
+}
+
+.btn-awesome{
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+    margin-top: 28px;
+}
+
+.row-1{
+
+}
+
+.row-2{
+    margin-left: 207px;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+.percent{
+    font-size: 40px;
+    font-family: inherit;
+}

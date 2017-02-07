@@ -31,7 +31,7 @@ h2 a {
 .container {
     text-align: left;
     overflow: hidden;
-    width: 100%;
+    width: 50%;
     margin: 38px auto;
     display: table;
     padding: 0px 0 8em 0;

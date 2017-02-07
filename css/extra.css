@@ -1,0 +1,49 @@
+#heading, h1{
+text-align: center;
+letter-spacing: 4px;
+font-size: 34px;
+font-family: times, Times New Roman, times-roman, georgia, serif;
+}
+
+#heading, h2{
+text-align: center;
+letter-spacing: 4px;
+font-size: 30px;
+font-family: times, Times New Roman, times-roman, georgia, serif;
+}
+
+#heading, p{
+text-align: center;
+letter-spacing: 4px;
+font-size: 14px;
+font-family: times, Times New Roman, times-roman, georgia, serif;
+}
+
+p{
+text-align: center;
+letter-spacing: 4px;
+font-size: 14px;
+font-family: times, Times New Roman, times-roman, georgia, serif;
+}
+
+.features{
+    transition:all 1s ease;
+}
+
+.scenarios{
+
+}
+
+.steps{
+transition:all 1s ease;
+}
+
+.feature-button{
+
+}
+
+.slider{
+    margin-top: -40px;
+}
+
+body{min-height: 500px;-mox-box-shadow:inset 0 0 0 5px #f2f2f2,inset 0 0 0 10px #90c0aa,inset 0 0 0 15px #f2f2f2;margin:0}.pricing-table{margin: 0 auto;top: 20px;position: relative;}

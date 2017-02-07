@@ -20,8 +20,13 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/pricing-tables.css">
     <link rel="stylesheet" href="../css/card_open.css">
+    <link rel="stylesheet" href="../css/smry_button.css">
+    <link rel="stylesheet" href="../css/extra.css">
+    <link rel="stylesheet" href="../css/bubble.css">
+
     <script src="../js/justgage.js"></script>
     <script src="../js/raphael-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../js/page_functions_summary.js"></script>
 
     <!--[if lte IE 9]><link rel="stylesheet" href="../css/ie.css"><![endif]-->
 
@@ -74,115 +79,119 @@
 <div id="heading_common"><p>Hover over the pie to see the numbers</p></div>
 <br>
 <br>
-<div id='mySwipe' style='max-width:721px;margin:0 auto' class='swipe'>
-  <div class='swipe-wrap' style="width: 721 px">
-      <div id = "stage" style = "">
-          <div class="type-heading"><span class = "summary-page-table-heading"></span> Execution Summary</div>
-        <table class="pricing-table">
-            <thead>
-            <tr class="plan">
-                <td class="green">
-                    <h2>Pass</h2>
-                    <em>Happy Tests</em>
-                </td>
-                <td class="red">
-                    <h2>Failed</h2>
-                    <em>Assertions went wrong</em>
-                </td>
-                <td class="yellow">
-                    <h2>Skips</h2>
-                    <em>Did not run</em>
-                </td>
+<p style="height: 10px;"></p>
+<div class='slider' style="width: 721 px">
+    <div class="pagination" align="center">
+        <button class="button feature-button arrow">Execution Details</button>
+        <button class="button step-button arrow">Environment Details</button>
+        <button class="button scenario-button arrow">Facts</button>
+    </div>
+  <div id = "stage" style = "">
+      <br>
+    <table class="pricing-table">
+        <thead>
+        <tr class="plan">
+            <td class="green">
+                <h2>Pass</h2>
+                <em>Happy Tests</em>
+            </td>
+            <td class="red">
+                <h2>Failed</h2>
+                <em>Assertions went wrong</em>
+            </td>
+            <td class="yellow">
+                <h2>Skips</h2>
+                <em>Did not run</em>
+            </td>
+        </tr>
+        <tr class="price">
+            <td class="green">
+                <a href="test_result.html?status=passed">Check</a>
+            </td>
+            <td class="red">
+                <a href="test_result.html?status=failed">Check</a>
+            </td>
+            <td class="yellow">
+                <a href="test_result.html?status=skipped">Check</a>
+            </td>
+        </tr>
+        </thead>
+    </table>
+      <p style="height: 30px;"></p>
+    <div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
+  </div>
+  <div id = "execution_details" style="">
+      <br>
+    <table class="container">
+        <tbody>
+            <tr>
+                <td id="first-details"></td>
+                <td class="info"></td>
+                <td class="project"></td>
             </tr>
-            <tr class="price">
-                <td class="green">
-                    <a href="test_result.html?status=passed">Check</a>
-                </td>
-                <td class="red">
-                    <a href="test_result.html?status=failed">Check</a>
-                </td>
-                <td class="yellow">
-                    <a href="test_result.html?status=skipped">Check</a>
-                </td>
+            <tr>
+                <td id="second-details"></td>
+                <td class="info"></td>
+                <td class="env"></td>
             </tr>
-            </thead>
-        </table>
-          <p style="height: 30px;"></p>
-        <div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
-      </div>
-      <div id = "stage_spec" style = "">
-          <div class="type-heading">Scenarios Execution Summary</div>
-        <table class="pricing-table">
-            <thead>
-            <tr class="plan">
-                <td class="green">
-                    <h2>Pass</h2>
-                    <em>Happy Specs</em>
-                </td>
-                <td class="red">
-                    <h2>Failed</h2>
-                    <em>Assertions Specs</em>
-                </td>
-                <td class="yellow">
-                    <h2>Skips</h2>
-                    <em>Skipped</em>
-                </td>
+            <tr>
+                <td id="third-details"></td>
+                <td class="info"></td>
+                <td class="tags"></td>
             </tr>
-            <tr class="price">
-                <td class="green">
-                    <a href="pass.html">Check</a>
-                </td>
-                <td class="red">
-                    <a href="failure.html">Check</a>
-                </td>
-                <td class="yellow">
-                    <a href="skip.html">Check</a>
-                </td>
+            <tr>
+                <td id="fourth-details"></td>
+                <td class="info"></td>
+                <td class="gt"></td>
             </tr>
-            </thead>
-        </table>
-          <p style="height: 30px;"></p>
-        <div id="chartdiv1" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
+        </tbody>
+    </table>
+    <div id="gaugechart" class="200x160px" style="min-width: 310px; max-width: 600px; height: 400px; margin: 0 auto"></div>
+  </div>
+  <div id = "stage_spec" class="facts" style = "">
+      <br>
+      <br>
+      <div class="row-1">
+        <div class="circle">
+            <h2 class="fact-heading">The slowest test</h2><br>
+            <span class="time-exe">15</span><br>
+            <span class="time-unit">Seconds</span><br>
+            <button class="btn-awesome">Check</button>
+        </div>
+        <div class="circle">
+            <h2 class="fact-heading">The slowest module</h2><br>
+            <span class="time-exe">127</span><br>
+            <span class="time-unit">Seconds</span><br>
+            <button class="btn-awesome">Check</button>
+        </div>
 
+        <div class="circle">
+            <h2 class="fact-heading">Vulnerable Module</h2><br>
+            <span class="time-exe">85</span><span class="percent">%</span><br>
+            <span class="time-unit">Failures</span><br>
+            <button class="btn-awesome">Check</button>
+        </div>
       </div>
-      <div id = "execution_details" style="">
-        <div class="type-heading">Execution Specific Info</div>
+      <div class="row-2">
+        <div class="circle">
+            <h2 class="fact-heading">The Fastest Module</h2><br>
+            <span class="time-exe">37</span><br>
+            <span class="time-unit">Seconds</span><br>
+            <button class="btn-awesome">Check</button>
+        </div>
+        <div class="circle">
+            <h2 class="fact-heading">On Average</h2><br>
+            <span class="time-exe">7</span><br>
+            <span class="time-unit">Seconds/Test</span><br>
+            <button class="btn-awesome">Check</button>
+        </div>
 
-        <table class="container">
-            <tbody>
-                <tr>
-                    <td id="first-details"></td>
-                    <td class="info"></td>
-                    <td class="project"></td>
-                </tr>
-                <tr>
-                    <td id="second-details"></td>
-                    <td class="info"></td>
-                    <td class="env"></td>
-                </tr>
-                <tr>
-                    <td id="third-details"></td>
-                    <td class="info"></td>
-                    <td class="tags"></td>
-                </tr>
-                <tr>
-                    <td id="fourth-details"></td>
-                    <td class="info"></td>
-                    <td class="gt"></td>
-                </tr>
-            </tbody>
-        </table>
-        <div id="gaugechart" class="200x160px" style="min-width: 310px; max-width: 600px; height: 400px; margin: 0 auto"></div>
       </div>
   </div>
 </div>
 
-<div style='text-align:center;'>
 
-  <button class="prev" onclick='mySwipe.prev()'>prev</button>
-  <button class="next" onclick='mySwipe.next()'>next</button>
-
-</div>
+<p style="height: 10px;"></p><br>
 <script type="text/javascript" src="../js/swiping.js"></script>
 <!--<div id="module-link"><a href="modules.html" align="center">Check the Modules Report</a></div>-->
 <br>
