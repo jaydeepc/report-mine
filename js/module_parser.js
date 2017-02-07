@@ -81,7 +81,7 @@
                var error_link = ""
 
                if (modules[key]['fail_count'] > 0){
-                    failed_link = "<li><b><a href='test_result.html?module=" + key + "'>" + modules[key]['fail_count'] + "</b> - Tests Failed</li></a>";
+                    failed_link = "<li><b><a href='test_result.html?module=" + key + "&status=failed'>" + modules[key]['fail_count'] + "</b> - Tests Failed</li></a>";
                }
                else{
                     failed_link = "<li><b>" + modules[key]['fail_count'] + "</b> - Tests Failed</li>";
