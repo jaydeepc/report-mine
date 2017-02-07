@@ -14,6 +14,7 @@
                $.getJSON('../data/result.json', function(jd) {
                     total_failed_tests = jd.report.summary.failed || 0;
                     total_skipped_tests = jd.report.summary.skipped || 0;
+                    total_errored_tests = jd.report.summary.error || 0;
                     total_pass_tests = jd.report.summary.passed;
                     total_tests = jd.report.summary.num_tests;
 
@@ -21,7 +22,8 @@
                     $('#stage .pricing-table .price .green').append('<p><span>%</span>' + Math.round((total_pass_tests)*100/total_tests) + '</p>');
                     $('#stage .pricing-table .price .red').append('<p><span>%</span>' + Math.round((total_failed_tests)*100/total_tests) + '</p>');
                     $('#stage .pricing-table .price .yellow').append('<p><span>%</span>' + Math.round((total_skipped_tests)*100/total_tests) + '</p>');
-                    createPie("chartdiv", total_pass_tests, total_failed_tests, total_skipped_tests);
+                    $('#stage .pricing-table .price .orange').append('<p><span>%</span>' + Math.round((total_errored_tests)*100/total_tests) + '</p>');
+                    createPie("chartdiv", total_pass_tests, total_failed_tests, total_skipped_tests, total_errored_tests);
 
                     //populate gaugechart and details table
                     platform = jd.report.environment.Platform;
@@ -36,7 +38,7 @@
                     createSpeedoMeter("gaugechart", Math.round(execution_time));
                });
 
-                function createPie(chart_id, passCount, failCount, skipCount){
+                function createPie(chart_id, passCount, failCount, skipCount, errorcount){
                         AmCharts.makeChart(chart_id,
                             {
                                 "type": "pie",
@@ -50,7 +52,7 @@
                                     "#75d644",
                                     "#f26f6f",
                                     "#f4d20e",
-                                    "#F3CB0B"
+                                    "#FF6F0F"
                                 ],
                                 "hoverAlpha": 0.66,
                                 "marginBottom": 20,
@@ -85,6 +87,10 @@
                                     {
                                         "category": "Skips",
                                         "column-1": skipCount
+                                    },
+                                    {
+                                        "category": "Errors",
+                                        "column-1": errorcount
                                     }
                                 ]
                             }

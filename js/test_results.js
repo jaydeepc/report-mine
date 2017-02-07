@@ -61,8 +61,26 @@ function removeModal(){
     $('#modal').removeClass('show');
 }
 function showModal(i){
+    var fail_trace = "";
+    if (test_list[i].call !== undefined){
+        fail_trace = test_list[i].call.longrepr.trim();
+    }
+    else {
+        if (test_list[i].setup !== undefined){
+            if (test_list[i].setup.longrepr !== undefined){
+                fail_trace = test_list[i].setup.longrepr.trim();
+            }
+            else if (test_list[i].teardown !== undefined){
+                if (test_list[i].teardown.longrepr !== undefined){
+                    fail_trace = test_list[i].teardown.longrepr.trim();
+                }
+
+            }
+        }
+
+    }
     var header = $('<h2>'+ fetch_module_name(test_list[i].name) +' : ' + fetch_test_name(test_list[i].name) +'</h2>');
-    var body = $('<pre>'+test_list[i].call.longrepr.trim()+'</pre>');
+    var body = $('<pre>'+fail_trace+'</pre>');
     var footer = $("<button class='md-close' onclick='removeModal();'>Close</button>");
     $('#modal-header').html('');
     $('#modal-container').html('');

@@ -19,6 +19,8 @@
             var fail_count = 0;
             skip_count_key = "skip_count";
             var skip_count = 0;
+            error_count_key = "error_count";
+            var error_count = 0;
 
             for (i=0; i < jd.report.tests.length; i++){
                 if(jd.report.tests[i].name.split("::")[1] == key){
@@ -31,6 +33,9 @@
                     else if (jd.report.tests[i].outcome == 'skipped'){
                         skip_count = skip_count + 1;
                     }
+                    else if (jd.report.tests[i].outcome == 'error'){
+                        error_count = error_count + 1;
+                    }
 
                 }
             }
@@ -38,6 +43,7 @@
             details[pass_count_key] = pass_count;
             details[fail_count_key] = fail_count;
             details[skip_count_key] = skip_count;
+            details[error_count_key] = error_count;
             modules[key] = details;
 
         }
@@ -47,6 +53,8 @@
             data_for_graph['category'] = key;
             data_for_graph['column-1'] = modules[key]['pass_count'];
             data_for_graph['column-2'] = modules[key]['fail_count'];
+            data_for_graph['column-3'] = modules[key]['error_count'];
+            data_for_graph['column-4'] = modules[key]['skip_count'];
             my_array.push(data_for_graph);
         }
 
@@ -70,6 +78,7 @@
                var failed_link = "";
                var passed_link = "";
                var skipped_link = "";
+               var error_link = ""
 
                if (modules[key]['fail_count'] > 0){
                     failed_link = "<li><b><a href='test_result.html?module=" + key + "'>" + modules[key]['fail_count'] + "</b> - Tests Failed</li></a>";
@@ -83,6 +92,13 @@
                }
                else{
                     passed_link = "<li><b>" + modules[key]['pass_count'] + "</b> - Tests Passed</li>";
+               }
+
+               if (modules[key]['error_count'] > 0){
+                    error_link = "<li><b><a href='test_result.html?module=" + key + "&status=error'>" + modules[key]['error_count'] + "</b> - Tests Errored Out</li></a>";
+               }
+               else{
+                    error_link = "<li><b>" + modules[key]['error_count'] + "</b> - - Tests Errored Out</li>";
                }
 
                if (modules[key]['skip_count'] > 0){
@@ -100,6 +116,7 @@
                       '<li><b><a href=\'test_result.html?module=' + key + '\'>' + modules[key]['total'] + '</b> - Total Number of Tests</li></a>' +
                        passed_link +
                        failed_link +
+                       error_link +
                        skipped_link
               );
 
@@ -138,6 +155,26 @@ function createBar(data_array){
                     "valueField": "column-2",
                     "lineColor": "#FFFFFF",
                     "fillColors": "#f26f6f"
+                },
+                {
+                    "balloonText": "[[title]] in '[[category]]':[[value]]",
+                    "fillAlphas": 1,
+                    "id": "AmGraph-3",
+                    "title": "Tests Errored",
+                    "type": "column",
+                    "valueField": "column-3",
+                    "lineColor": "#FFFFFF",
+                    "fillColors": "#FF6F0F"
+                },
+                {
+                    "balloonText": "[[title]] in '[[category]]':[[value]]",
+                    "fillAlphas": 1,
+                    "id": "AmGraph-4",
+                    "title": "Tests Skipped",
+                    "type": "column",
+                    "valueField": "column-4",
+                    "lineColor": "#FFFFFF",
+                    "fillColors": "#f4d20e"
                 }
             ],
             "guides": [],
