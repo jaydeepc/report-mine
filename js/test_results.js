@@ -3,6 +3,7 @@ $(document).ready(function() {
     $.getJSON('../data/result.json', function(jd) {
 
         test_list = jd.report.tests;
+        show_failure_trace = "";
 
         table_creator = {
             0:{"Module Name": "module"},
@@ -13,6 +14,12 @@ $(document).ready(function() {
         };
 
         for(i=0; i<test_list.length; i++){
+            if (test_list[i].outcome != 'passed'){
+                show_failure_trace = "</td><td class='stacktrace'><a onclick='showModal("+i+");'>Show Failure Trace</a></td><td>";
+            }
+            else{
+                show_failure_trace = "</td><td class='stacktrace'>**********</td><td>";
+            }
             $(".container tbody").append("<tr id='table-row-"+i+"'><td>" + fetch_module_name(test_list[i].name)
             +
             "</td><td>"
@@ -22,7 +29,7 @@ $(document).ready(function() {
             "</td><td>" +
             test_list[i].outcome
             +
-            "</td><td><a onclick='showModal("+i+");'>Show Failure Trace</a></td><td>"
+            show_failure_trace
             +
             has_artifact()
             +
@@ -61,6 +68,14 @@ $(document).ready(function() {
                         }
                     }
                 }
+        }).then(function(){
+            if ($(".filter-name").text().includes("Passed")){
+                $(".stacktrace").hide();
+            }
+            else{
+                $(".stacktrace").show();
+            }
+
         });
 
 });
@@ -114,7 +129,7 @@ function fetch_test_name(name_string){
 }
 
 function has_artifact(){
-    return true;
+    return false;
 }
 
 function find_pos_from_filter_key(dict_val, filter_key){
