@@ -1,6 +1,6 @@
 {
   "name": "report-mine",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A reporting tool to visualise outputs from automated tests across multiple testing tools",
   "keywords": [
     "report",
