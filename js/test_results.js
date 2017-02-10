@@ -18,7 +18,7 @@ $(document).ready(function() {
                 show_failure_trace = "</td><td class='stacktrace'><a onclick='showModal("+i+");'>Show Failure Trace</a></td><td>";
             }
             else{
-                show_failure_trace = "</td><td class='stacktrace'>*****NA*****</td><td>";
+                show_failure_trace = "</td><td class='stacktrace'>*** N/A ***</td><td>";
             }
             $(".container tbody").append("<tr id='table-row-"+i+"'><td>" + fetch_module_name(test_list[i].name)
             +
