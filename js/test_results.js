@@ -14,13 +14,15 @@ $(document).ready(function() {
         };
 
         for(i=0; i<test_list.length; i++){
+            var color="";
             if (test_list[i].outcome != 'passed'){
                 show_failure_trace = "</td><td class='stacktrace'><a onclick='showModal("+i+");'>Show Failure Trace</a></td><td>";
             }
             else{
                 show_failure_trace = "</td><td class='stacktrace'>*** N/A ***</td><td>";
+                color = "#66fbab";
             }
-            $(".container tbody").append("<tr id='table-row-"+i+"'><td>" + fetch_module_name(test_list[i].name)
+            $(".container tbody").append("<tr id='table-row-"+i+"'><td style='color:"+color+"'>" + fetch_module_name(test_list[i].name)
             +
             "</td><td>"
             +
