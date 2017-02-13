@@ -63,6 +63,35 @@
 	background: url(../images/yellow_pattern.jpg) repeat-x 0 0;
 }
 
+p.green_number {
+    color: #61ab3b;
+    font-size: 20px !important;
+    font-family: courier;
+    margin-bottom: -23px !important;
+}
+
+p.red_number {
+    color: #e65050;
+    font-size: 20px !important;
+    font-family: courier;
+    margin-bottom: -23px !important;
+}
+
+
+p.yellow_number {
+    color: #c7b213;
+    font-size: 20px !important;
+    font-family: courier;
+    margin-bottom: -23px !important;
+}
+
+
+p.orange_number {
+    color: #e86c2f;
+    font-size: 20px !important;
+    font-family: courier;
+    margin-bottom: -23px !important;
+}
 
 
 /* Plan Price Section */
