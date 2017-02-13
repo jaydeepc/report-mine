@@ -19,10 +19,18 @@
                     total_tests = jd.report.summary.num_tests;
 
                     //Populate Pie Chart
-                    $('#stage .pricing-table .price .green').append('<p><span>%</span>' + Math.round((total_pass_tests)*100/total_tests) + '</p>');
-                    $('#stage .pricing-table .price .red').append('<p><span>%</span>' + Math.round((total_failed_tests)*100/total_tests) + '</p>');
-                    $('#stage .pricing-table .price .yellow').append('<p><span>%</span>' + Math.round((total_skipped_tests)*100/total_tests) + '</p>');
-                    $('#stage .pricing-table .price .orange').append('<p><span>%</span>' + Math.round((total_errored_tests)*100/total_tests) + '</p>');
+                    $('#stage .pricing-table .price .green')
+                        .append('<p><span>%</span>' + Math.round((total_pass_tests)*100/total_tests) + '</p>')
+                        .append('<p class="green_number">' + total_pass_tests + ' TEST(S) </p>');
+                    $('#stage .pricing-table .price .red')
+                        .append('<p><span>%</span>' + Math.round((total_failed_tests)*100/total_tests) + '</p>')
+                        .append('<p class="red_number">' + total_failed_tests + ' TEST(S) </p>');
+                    $('#stage .pricing-table .price .yellow')
+                        .append('<p><span>%</span>' + Math.round((total_skipped_tests)*100/total_tests) + '</p>')
+                        .append('<p class="yellow_number">' + total_skipped_tests + ' TEST(S) </p>');
+                    $('#stage .pricing-table .price .orange')
+                        .append('<p><span>%</span>' + Math.round((total_errored_tests)*100/total_tests) + '</p>')
+                        .append('<p class="orange_number">' + total_errored_tests + ' TEST(S) </p>');
                     createPie("chartdiv", total_pass_tests, total_failed_tests, total_skipped_tests, total_errored_tests);
 
                     //populate gaugechart and details table
