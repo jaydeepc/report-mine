@@ -11,13 +11,39 @@
     "pytest"
   ],
   "author": "Jaydeep Chakrabarty <jaydeep.c1@gmail.com>",
-  "contributors": [{
-  "name": "Harinee Muralinath",
-  "email": "harinee8@gmail.com"
-}],
+  "contributors": [
+    "Harinee Muralinath <harinee8@gmail.com>"
+  ],
   "repository": {
-  "type": "git",
-  "url": "https://github.com/jaydeepc/report-mine"
-},
-  "license": "MIT"
+    "type": "git",
+    "url": "git+https://github.com/jaydeepc/report-mine.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaydeepc/report-mine/issues"
+  },
+  "homepage": "https://github.com/jaydeepc/report-mine#readme",
+  "main": "index.js",
+  "bin": {
+    "report-mine": "./index.js"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "clear": "0.0.1",
+    "clui": "^0.3.1",
+    "copy-dir": "latest",
+    "figlet": "^1.1.2",
+    "find-remove": "^1.0.0",
+    "fs": "latest",
+    "mv": "^2.1.1",
+    "path": "latest",
+    "stdio": "^0.2.7",
+    "studio": "^0.13.3",
+    "fs-extra":"latest",
+    "colors":"latest"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
