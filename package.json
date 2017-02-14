@@ -40,7 +40,12 @@
     "stdio": "^0.2.7",
     "studio": "^0.13.3",
     "fs-extra":"latest",
-    "colors":"latest"
+    "colors":"latest",
+    "express": "latest",
+    "http": "latest",
+    "url": "latest",
+    "static-server": "latest",
+    "find-port": "latest"
   },
   "devDependencies": {},
   "scripts": {
