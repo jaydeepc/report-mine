@@ -41,7 +41,6 @@
     "studio": "^0.13.3",
     "fs-extra":"latest",
     "colors":"latest",
-    "express": "latest",
     "http": "latest",
     "url": "latest",
     "static-server": "latest",
