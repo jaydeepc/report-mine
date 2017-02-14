@@ -20,7 +20,7 @@ $(document).ready(function() {
             }
             else{
                 show_failure_trace = "</td><td class='stacktrace'>*** N/A ***</td><td>";
-                color = "#66fbab";
+                color = "#61ab3b";
             }
             $(".container tbody").append("<tr id='table-row-"+i+"'><td style='color:"+color+"'>" + fetch_module_name(test_list[i].name)
             +
