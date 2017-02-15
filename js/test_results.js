@@ -14,13 +14,10 @@ $(document).ready(function() {
         };
 
         for(i=0; i<test_list.length; i++){
-            if (test_list[i].outcome != 'passed'){
-                show_failure_trace = "</td><td class='stacktrace'><a onclick='showModal("+i+");'>Show Failure Trace</a></td><td>";
-            }
-            else{
-                show_failure_trace = "</td><td class='stacktrace'>*** N/A ***</td><td>";
-            }
-            $(".container tbody").append("<tr id='table-row-"+i+"'><td>" + fetch_module_name(test_list[i].name)
+            var color="";
+            show_failure_trace = stackTraceLink();
+            color = moduleNameColor();
+            $(".container tbody").append("<tr id='table-row-"+i+"'><td style='color:"+color+"'>" + fetch_module_name(test_list[i].name)
             +
             "</td><td>"
             +
@@ -71,6 +68,26 @@ $(document).ready(function() {
         });
 
 });
+
+function stackTraceLink(){
+    if (test_list[i].outcome != 'passed'){
+        return "</td><td class='stacktrace'><a onclick='showModal("+i+");'>Show Failure Trace</a></td><td>";
+        }
+    return "</td><td class='stacktrace'>*** N/A ***</td><td>";
+}
+
+function moduleNameColor(){
+    if (test_list[i].outcome == 'passed'){
+               return "#61ab3b";
+            }
+    else if(test_list[i].outcome == 'error'){
+               return "#e86c2f";
+            }
+    else if(test_list[i].outcome == 'skipped'){
+               return "#c7b213";
+            }
+    return "#e65050";
+}
 
 function removeModal(){
     $('#modal').removeClass('show');
