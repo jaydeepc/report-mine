@@ -1,74 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <title>Facts</title>
+	  <script type = "text/javascript" src = "../js/jquery-1.12.1.min.js"></script>
+
+    <!-- amCharts javascript sources -->
+    <script type="text/javascript" src="../js/amcharts.js"></script>
+    <script type="text/javascript" src="../js/serial.js"></script>
+    <script type="text/javascript" src="../js/module_parser.js"></script>
+    <link rel="stylesheet" href="../css/reset_2.css">
+    <link rel="stylesheet" href="../css/pricing-tables.css">
+	  <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/module_cards.css">
+    <script src="../js/raphael-2.1.4.min.js"></script>
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+
+    <link rel="stylesheet" href="../css/bootstrap-vertical-menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--[if lte IE 9]><link rel="stylesheet" href="../css/ie.css"><![endif]-->
+    <link rel="stylesheet" href="../css/bubble.css">
 </head>
 <body>
-        <div class="card-container">
-         <div class="card">
-             <div class="front">
-                 <div class="cover">
-                     <img src="images/rotating_card_thumb3.png"/>
-                 </div>
-                 <div class="user">
-                     <img class="img-circle" src="images/rotating_card_profile.png"/>
-                 </div>
-                 <div class="content">
-                     <div class="main">
-                         <h3 class="name">Inna Corman</h3>
-                         <p class="profession">Product Manager</p>
+    <nav class="navbar navbar-vertical-left">
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="summary.html">
+          <i class="fa fa-fw fa-lg fa-home"></i>
+          <span>Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="env.html">
+          <i class="fa fa-fw fa-lg fa-envira" aria-hidden="true"></i>
+          <span>Environment</span>
+        </a>
+      </li>
+      <li>
+        <a href="bubble.html">
+          <i class="fa fa-fw fa-lg fa-comments-o" aria-hidden="true"></i>
+          <span>Facts</span>
+        </a>
+      </li>
 
-                         <p class="text-center">"I'm the new Sinatra, and since I made it here I can make it anywhere, yeah, they love me everywhere"</p>
-                     </div>
-                     <div class="footer">
-                         <div class="rating">
-                             <i class="fa fa-mail-forward"></i> Auto Rotation
-                         </div>
-                     </div>
-                 </div>
-             </div> <!-- end front panel -->
-             <div class="back">
-                 <div class="header">
-                     <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
-                 </div>
-                 <div class="content">
-                     <div class="main">
-                         <h4 class="text-center">Job Description</h4>
-                         <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
+      <li>
+        <a href="#">
+          <i class="fa fa-fw fa-lg fa-briefcase"></i>
+          <span>Suite Summary</span>
+        </a>
+      </li>
+      <li>
+        <a href="modules.html">
+          <i class="fa fa-fw fa-lg fa-newspaper-o"></i>
+          <span>Specs Summary</span>
+        </a>
+      </li>
+      <li>
+        <a href="test_execution_time_graph.html">
+            <i class="fa fa-fw fa-lg fa-line-chart"></i>
+            <span>Test trends</span>
+        </a>
+      </li>
+    </ul></nav>
+<br>
+<br>
+<div id="heading_common">
+    <h1>Facts about the Test Runs</h1>
+    <hr width="100%">
+</div>
+<div id="heading_common"><p>Click on the bubble to check fact details</p></div>
+<br>
+<div id = "stage_spec" class="facts" style = "">
+      <br>
+      <br>
+      <div class="row-1">
+        <div class="circle">
+            <h2 class="fact-heading">The slowest test</h2><br>
+            <span class="time-exe">15</span><br>
+            <span class="time-unit">Seconds</span><br>
+            <button class="btn-awesome">Check</button>
+        </div>
+        <div class="circle">
+            <h2 class="fact-heading">The slowest module</h2><br>
+            <span class="time-exe">127</span><br>
+            <span class="time-unit">Seconds</span><br>
+            <button class="btn-awesome">Check</button>
+        </div>
 
-                         <div class="stats-container">
-                             <div class="stats">
-                                 <h4>235</h4>
-                                 <p>
-                                     Followers
-                                 </p>
-                             </div>
-                             <div class="stats">
-                                 <h4>114</h4>
-                                 <p>
-                                     Following
-                                 </p>
-                             </div>
-                             <div class="stats">
-                                 <h4>35</h4>
-                                 <p>
-                                     Projects
-                                 </p>
-                             </div>
-                         </div>
+        <div class="circle">
+            <h2 class="fact-heading">Vulnerable Module</h2><br>
+            <span class="time-exe">85</span><span class="percent">%</span><br>
+            <span class="time-unit">Failures</span><br>
+            <button class="btn-awesome">Check</button>
+        </div>
+      </div>
+      <div class="row-2">
+        <div class="circle">
+            <h2 class="fact-heading">The Fastest Module</h2><br>
+            <span class="time-exe">37</span><br>
+            <span class="time-unit">Seconds</span><br>
+            <button class="btn-awesome">Check</button>
+        </div>
+        <div class="circle">
+            <h2 class="fact-heading">On Average</h2><br>
+            <span class="time-exe">7</span><br>
+            <span class="time-unit">Seconds/Test</span><br>
+            <button class="btn-awesome">Check</button>
+        </div>
 
-                     </div>
-                 </div>
-                 <div class="footer">
-                     <div class="social-links text-center">
-                         <a href="http://creative-tim.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
-                         <a href="http://creative-tim.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
-                         <a href="http://creative-tim.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
-                     </div>
-                 </div>
-             </div> <!-- end back panel -->
-         </div> <!-- end card -->
-     </div>
+      </div>
+  </div><footer>
+</footer>
 </body>
 </html>
