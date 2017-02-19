@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="../css/bootstrap-vertical-menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <script type="text/javascript" src="../js/fact_utils.js"></script>
     <!--[if lte IE 9]><link rel="stylesheet" href="../css/ie.css"><![endif]-->
     <link rel="stylesheet" href="../css/bubble.css">
 </head>
@@ -71,26 +72,26 @@
 </div>
 <div id="heading_common"><p>Click on the bubble to check fact details</p></div>
 <br>
-<div id = "stage_spec" class="facts" style = "">
+  <div id = "stage_spec" class="facts" style = "">
       <br>
       <br>
       <div class="row-1">
         <div class="circle">
             <h2 class="fact-heading">The slowest test</h2><br>
-            <span class="time-exe">15</span><br>
+            <span class="time-exe"></span><br>
             <span class="time-unit">Seconds</span><br>
             <button class="btn-awesome">Check</button>
         </div>
         <div class="circle">
             <h2 class="fact-heading">The slowest module</h2><br>
-            <span class="time-exe">127</span><br>
+            <span class="time-module"></span><br>
             <span class="time-unit">Seconds</span><br>
             <button class="btn-awesome">Check</button>
         </div>
 
         <div class="circle">
             <h2 class="fact-heading">Vulnerable Module</h2><br>
-            <span class="time-exe">85</span><span class="percent">%</span><br>
+            <span class="vul-module"></span><span class="percent">%</span><br>
             <span class="time-unit">Failures</span><br>
             <button class="btn-awesome">Check</button>
         </div>
@@ -98,13 +99,13 @@
       <div class="row-2">
         <div class="circle">
             <h2 class="fact-heading">The Fastest Module</h2><br>
-            <span class="time-exe">37</span><br>
+            <span class="fastest-module"></span><br>
             <span class="time-unit">Seconds</span><br>
             <button class="btn-awesome">Check</button>
         </div>
         <div class="circle">
             <h2 class="fact-heading">On Average</h2><br>
-            <span class="time-exe">7</span><br>
+            <span class="avg-time"></span><br>
             <span class="time-unit">Seconds/Test</span><br>
             <button class="btn-awesome">Check</button>
         </div>

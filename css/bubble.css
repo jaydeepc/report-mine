@@ -60,7 +60,7 @@
     padding-top: 40px;
 }
 
-.time-exe{
+.time-exe, .time-module, .vul-module, .fastest-module, .avg-time{
     font-size: 68px;
 }
 
