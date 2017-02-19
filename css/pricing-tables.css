@@ -43,24 +43,28 @@
 	color: #fafafa;
 	text-shadow: 1px 1px 0px rgba(255,255,255, .2);
 	background: url(../images/green_pattern.png) repeat-x 0 0;
+	height: 60px;
 }
 
 .pricing-table thead .plan .orange {
 	color: #fafafa;
 	text-shadow: 1px 1px 2px rgba(0,0,0, .4);
 	background: url(../images/orange_pattern.png) repeat-x 0 0;
+    height: 60px;
 }
 
 .pricing-table thead .plan .red {
 	color: #fafafa;
 	text-shadow: 1px 1px 2px rgba(0,0,0, .4);
 	background: url(../images/red_pattern.jpg) repeat-x 0 0;
+    height: 60px;
 }
 
 .pricing-table thead .plan .yellow {
 	color: #fafafa;
 	text-shadow: 1px 1px 2px rgba(0,0,0, .4);
 	background: url(../images/yellow_pattern.jpg) repeat-x 0 0;
+    height: 60px;
 }
 
 p.green_number {
