@@ -44,14 +44,7 @@
           <span>Facts</span>
         </a>
       </li>
-
-      <li>
-        <a href="#">
-          <i class="fa fa-fw fa-lg fa-briefcase"></i>
-          <span>Suite Summary</span>
-        </a>
-      </li>
-      <li>
+        <li>
         <a href="modules.html">
           <i class="fa fa-fw fa-lg fa-newspaper-o"></i>
           <span>Specs Summary</span>
@@ -80,20 +73,20 @@
             <h2 class="fact-heading">The slowest test</h2><br>
             <span class="time-exe"></span><br>
             <span class="time-unit">Seconds</span><br>
-            <button class="btn-awesome">Check</button>
+            <button class="btn-awesome" id="check_slw_test">Check</button>
         </div>
         <div class="circle">
             <h2 class="fact-heading">The slowest module</h2><br>
             <span class="time-module"></span><br>
             <span class="time-unit">Seconds</span><br>
-            <button class="btn-awesome">Check</button>
+            <button class="btn-awesome" id="check_slw_mod">Check</button>
         </div>
 
         <div class="circle">
             <h2 class="fact-heading">Vulnerable Module</h2><br>
             <span class="vul-module"></span><span class="percent">%</span><br>
             <span class="time-unit">Failures</span><br>
-            <button class="btn-awesome">Check</button>
+            <button class="btn-awesome" id="check_vul_mod">Check</button>
         </div>
       </div>
       <div class="row-2">
@@ -101,13 +94,13 @@
             <h2 class="fact-heading">The Fastest Module</h2><br>
             <span class="fastest-module"></span><br>
             <span class="time-unit">Seconds</span><br>
-            <button class="btn-awesome">Check</button>
+            <button class="btn-awesome" id="check_fast_mod">Check</button>
         </div>
         <div class="circle">
             <h2 class="fact-heading">On Average</h2><br>
             <span class="avg-time"></span><br>
             <span class="time-unit">Seconds/Test</span><br>
-            <button class="btn-awesome">Check</button>
+            <button class="btn-awesome" id="avg_test">Check</button>
         </div>
 
       </div>
