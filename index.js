@@ -10,6 +10,8 @@ var Spinner = CLI.Spinner;
 var path = require('path');
 var findRemoveSync = require('find-remove')
 var colors = require('colors/safe');
+var findPort = require('find-port');
+var StaticServer = require('static-server');
 
 console.log(
     chalk.blue(
@@ -17,8 +19,8 @@ console.log(
     ))
 
 var ops = stdio.getopt({
-    'json': {key: 'results.json', args: 0
-        , description: 'Path to the json file'},
+    'json': {key: 'results.json', args: 0, description: 'Path to the json file'},
+    'withserver': {key: 's', args: 1, description: 'Start with a server'}
 });
 
 var mv = require('mv');
@@ -35,15 +37,48 @@ fs_copy.copy(global , process.argv[2]+"/report-mine" , function (err) {
         findRemoveSync(process.argv[2]+"/report-mine", {dir: 'node_modules',
             extensions: ['.json', '.md'], files: ['index.js', '.npmignore']})
         if (fs.existsSync(process.argv[2]+"/report-mine/data/")) {
-            fs_copy.move(process.argv[2]+"/results.json", process.argv[2]+"/report-mine/data/results.json" , function (err) {
-                if (err) return console.error(err + "Please provide path to results to results.json")
-                console.log(colors.green.bold("Success!"))
-                console.log(colors.green.bold("To view the results, start a local server and view the summary.html @" +
-                    process.argv[2]+"report-mine/views/summary.html"));
+            fs_copy.copy(process.argv[2]+"/result.json", process.argv[2]+"/report-mine/data/result.json" , function (err) {
+                if (err) return console.error(err + "Please provide path to results to result.json")
+                console.log(colors.green.bold("Success! Ported json to ReportMine. Ready to Serve"))
+                var is_server_needed = false;
+                is_server_needed = ops.withserver;
+                is_server_needed = (is_server_needed == 'true');
+
+                if (is_server_needed){
+                    findPort('localhost', 6001, 8001, function(ports) {
+                        var server = new StaticServer({
+                          rootPath: process.argv[2]+"/report-mine",
+                          port: ports[0],
+                          host: 'localhost',
+                          followSymlink: true,
+                          templates: {
+                            index: 'views/summary.html',
+                            notFound: '404.html'
+                          }
+                        });
+
+                        server.start(function (err) {
+                          if(err){
+                            console.log(err);
+                          }
+                          else{
+                            console.log(colors.yellow.bold('ReportMine server started in: ', "http://" + server.host + ":" + server.port));
+                          }
+
+                        });
+                    });
+                }
             });
         }
         status.stop();
     }
+
 });
+
+
+
+
+
+
 
 
