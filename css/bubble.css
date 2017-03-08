@@ -1,14 +1,17 @@
 .circle{
-    background-color: rgba(101, 162, 216, 0.34);
-    width: 250px;
-    height: 250px;
+    background-color: rgba(0, 150, 20, 0.34);
+    width: 290px;
+    height: 290px;
     text-align: center;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 150px;
+    border-radius: 170px;
     float: left;
-    margin-left: 181px;
+    margin-left: 157px;
+    border-style: solid;
+    border-width: 6px;
+    border-color: rgba(251, 251, 251, 0.6);
 }
 
 .circle.info-2{
@@ -57,7 +60,7 @@
     letter-spacing: 2px;
     font-size: 15px;
     font-family: times, Times New Roman, times-roman, georgia, serif;
-    padding-top: 40px;
+    padding-top: 53px;
 }
 
 .time-exe, .time-module, .vul-module, .fastest-module, .avg-time{

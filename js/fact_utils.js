@@ -4,10 +4,19 @@ $(document).ready(function() {
         test_list = jd.report.tests;
 
         $(".time-exe").append(Math.round(find_slowest_test(test_list).duration));
-        $(".time-module").append(Math.round(sorted_module_arr(create_module_dict_arr(jd), "duration").slice(-1)[0].duration));
+        $("#check_slw_test").attr("onclick", "location.href='test_result.html?test_name=" + fetch_test_name(find_slowest_test(test_list).name) + "';");
+
+        $(".time-module").append(Math.round(sorted_module_arr(create_module_dict_arr(jd), "avg_test_time").slice(-1)[0].duration));
+        $("#check_slw_mod").attr("onclick", "location.href='test_result.html?module=" + sorted_module_arr(create_module_dict_arr(jd), "avg_test_time").slice(-1)[0].module + "';");
+
         $(".vul-module").append(Math.round(sorted_module_arr(create_module_dict_arr(jd), "failure_rate").slice(-1)[0].failure_rate));
-        $(".fastest-module").append(Math.round(sorted_module_arr(create_module_dict_arr(jd), "duration")[0].duration));
+        $("#check_vul_mod").attr("onclick", "location.href='test_result.html?module=" + sorted_module_arr(create_module_dict_arr(jd), "failure_rate").slice(-1)[0].module + "';");
+
+        $(".fastest-module").append(Math.round(sorted_module_arr(create_module_dict_arr(jd), "avg_test_time")[0].avg_test_time));
+        $("#check_fast_mod").attr("onclick", "location.href='test_result.html?module=" + sorted_module_arr(create_module_dict_arr(jd), "avg_test_time")[0].module + "';");
+
         $(".avg-time").append(Math.round(avg_test_execution_time(jd)));
+        $("#avg_test").attr("onclick", "location.href='test_execution_time_graph.html';");
     });
 
 });
@@ -109,7 +118,8 @@ function create_module_dict_arr(jd){
             details[skip_count_key] = skip_count;
             details[error_count_key] = error_count;
             details[total_time] = duration;
-            details['module'] = key
+            details['module'] = key;
+            details['avg_test_time'] = Math.round(duration/module[key]);
 
             my_array.push(details);
 
