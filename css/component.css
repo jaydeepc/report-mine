@@ -1,3 +1,9 @@
+i.icon-close {
+    font-size: 46px;
+    color: white;
+    cursor: pointer;
+}
+
 #modal {
     position: fixed;
     top: 0;
