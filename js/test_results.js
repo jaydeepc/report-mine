@@ -4,6 +4,7 @@ $(document).ready(function() {
 
         test_list = jd.report.tests;
         show_failure_trace = "";
+        show_screenshot = "";
 
         table_creator = {
             0:{"Module Name": "module"},
@@ -16,6 +17,8 @@ $(document).ready(function() {
         for(i=0; i<test_list.length; i++){
             var color="";
             show_failure_trace = stackTraceLink();
+            show_screenshot = has_artifact();
+
             color = moduleNameColor();
             $(".container tbody").append("<tr id='table-row-"+i+"'><td style='color:"+color+"'>" + fetch_module_name(test_list[i].name)
             +
@@ -31,7 +34,7 @@ $(document).ready(function() {
             +
             show_failure_trace
             +
-            has_artifact()
+            show_screenshot
             +
             "</td></tr>");
 
@@ -140,8 +143,20 @@ function fetch_test_name(name_string){
 
 }
 
+function show_screenshots(i){
+    test_name = fetch_test_name(test_list[i].name);
+    var body = $("<img class='stretch' src='../screenshots/" + test_name + ".png'></img>");
+    var footer = $("<div class='md-close' onclick='removeModal();'><i class='fa fa-times-circle icon-close' aria-hidden='true'></i></button>");
+    $('#modal-header').html('');
+    $('#modal-container').html('');
+    $('#modal-container').append(body);
+    $('#modal-header').append(footer);
+    $('#modal').addClass('show');
+}
+
 function has_artifact(){
-    return false;
+    img_link = "<a onclick='show_screenshots("+i+");'>Screenshot</a>";
+    return img_link;
 }
 
 function find_pos_from_filter_key(dict_val, filter_key){

@@ -64,3 +64,8 @@ i.icon-close {
     white-space: -o-pre-wrap;    /* Opera 7 */
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
+
+.stretch {
+    width: 100%;
+    height: auto;
+}
