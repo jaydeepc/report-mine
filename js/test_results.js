@@ -155,6 +155,9 @@ function show_screenshots(i){
 }
 
 function has_artifact(){
+    if (test_list[i].outcome == 'passed' || test_list[i].outcome == 'skipped'){
+        return "*** N/A ***";
+    }
     img_link = "<a onclick='show_screenshots("+i+");'>Screenshot</a>";
     return img_link;
 }
