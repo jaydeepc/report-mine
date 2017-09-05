@@ -7,7 +7,7 @@ $(document).ready(function() {
         show_screenshot = "";
 
         table_creator = {
-            0:{"Module Name": "module"},
+            0:{"Module Name": "module_name"},
             1:{"Test Name": "test_name"},
             2:{"Status": "status"},
             3:{"Stack Trace": "stacktrace"},
@@ -20,17 +20,17 @@ $(document).ready(function() {
             show_screenshot = has_artifact();
 
             color = moduleNameColor();
-            $(".container tbody").append("<tr id='table-row-"+i+"'><td style='color:"+color+"'>" + fetch_module_name(test_list[i].name)
+            $(".container tbody").append("<tr id='table-row-"+i+"'><td style='color:"+color+"'>" + fetch_module_name(test_list[i])
             +
             "</td><td>"
             +
-            fetch_test_name(test_list[i].name)
+            fetch_test_name(test_list[i])
             +
             "</td><td>" +
-            test_list[i].outcome
+            test_list[i].testDetails.results
             +
             "</td><td>" +
-            SecondsTohhmmss(test_list[i].duration) + "</td>"
+            SecondsTohhmmss(test_list[i].totaltime) + "</td>"
             +
             show_failure_trace
             +
@@ -76,20 +76,20 @@ $(document).ready(function() {
 });
 
 function stackTraceLink(){
-    if (test_list[i].outcome != 'passed'){
+    if (test_list[i].testDetails.results != 'Pass'){
         return "</td><td class='stacktrace'><a onclick='showModal("+i+");'>Show Failure Trace</a></td><td>";
         }
     return "</td><td class='stacktrace'>*** N/A ***</td><td>";
 }
 
 function moduleNameColor(){
-    if (test_list[i].outcome == 'passed'){
+    if (test_list[i].testDetails.results == 'Pass'){
                return "#61ab3b";
             }
-    else if(test_list[i].outcome == 'error'){
+    else if(test_list[i].testDetails.results == 'Error'){
                return "#e86c2f";
             }
-    else if(test_list[i].outcome == 'skipped'){
+    else if(test_list[i].testDetails.results == 'Skip'){
                return "#c7b213";
             }
     return "#e65050";
@@ -100,24 +100,9 @@ function removeModal(){
 }
 function showModal(i){
     var fail_trace = "";
-    if (test_list[i].call !== undefined){
-        fail_trace = test_list[i].call.longrepr.trim();
-    }
-    else {
-        if (test_list[i].setup !== undefined){
-            if (test_list[i].setup.longrepr !== undefined){
-                fail_trace = test_list[i].setup.longrepr.trim();
-            }
-            else if (test_list[i].teardown !== undefined){
-                if (test_list[i].teardown.longrepr !== undefined){
-                    fail_trace = test_list[i].teardown.longrepr.trim();
-                }
+    fail_trace = test_list[i].testDetails.exceptiontrace.trim();
 
-            }
-        }
-
-    }
-    var header = $('<h2>'+ fetch_module_name(test_list[i].name) +' : ' + fetch_test_name(test_list[i].name) +'</h2>');
+    var header = $('<h2>'+ fetch_module_name(test_list[i]) +' : ' + fetch_test_name(test_list[i]) +'</h2>');
     var body = $('<pre id="stack-trace">'+fail_trace+'</pre>');
     var footer = $("<div class='md-close' onclick='removeModal();'><i class='fa fa-times-circle icon-close' aria-hidden='true'></i></button>");
     $('#modal-header').html('');
@@ -129,23 +114,17 @@ function showModal(i){
 }
 
 
-function fetch_module_name(name_string){
-
-    module_name = name_string.split("::")[1];
-    return module_name;
-
+function fetch_module_name(test){
+    return test.testDetails.classname;
 }
 
-function fetch_test_name(name_string){
-
-    module_name = name_string.split("::")[2];
-    return module_name;
-
+function fetch_test_name(test){
+    return test.testDetails.methodname;
 }
 
 function show_screenshots(i){
-    test_name = fetch_test_name(test_list[i].name);
-    var body = $("<img class='stretch' src='../screenshots/" + test_name + ".png'></img>");
+    test_name = fetch_test_name(test_list[i]);
+    var body = $("<img class='stretch' src='../logs/screenShotFailure" + test_name + ".png'></img>");
     var footer = $("<div class='md-close' onclick='removeModal();'><i class='fa fa-times-circle icon-close' aria-hidden='true'></i></button>");
     $('#modal-header').html('');
     $('#modal-container').html('');
@@ -155,7 +134,7 @@ function show_screenshots(i){
 }
 
 function has_artifact(){
-    if (test_list[i].outcome == 'passed' || test_list[i].outcome == 'skipped'){
+    if (test_list[i].testDetails.results == 'Pass' || test_list[i].testDetails.results == 'Skip'){
         return "*** N/A ***";
     }
     img_link = "<a onclick='show_screenshots("+i+");'>Screenshot</a>";

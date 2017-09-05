@@ -12,4 +12,17 @@ $(document).ready(function() {
   $(".highcharts-label").hide();
 
   //setup config for gauguechart
+
+  //setup result status
+
+ $.getJSON('../config.json', function(jd) {
+    $("#pass").attr("href", "test_result.html?status=" + jd.status.pass);
+    $("#fail").attr("href", "test_result.html?status=" + jd.status.fail);
+    $("#skip").attr("href", "test_result.html?status=" + jd.status.skip);
+    $("#error").attr("href", "test_result.html?status=" + jd.status.error);
+
+    $("#module-name").text(jd.result_view.module_name);
+ });
+
+
 });

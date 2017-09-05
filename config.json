@@ -1,0 +1,18 @@
+{
+
+  "status":{
+    "pass": "Pass",
+    "fail": "Fail",
+    "skip": "Skip",
+    "error": "Error"
+  },
+
+  "gaugechart":{
+
+  },
+
+  "result_view":{
+    "module_name": "Module Name"
+  }
+
+}
