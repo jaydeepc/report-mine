@@ -123,8 +123,8 @@ function fetch_test_name(test){
 }
 
 function show_screenshots(i){
-    test_name = fetch_test_name(test_list[i]);
-    var body = $("<img class='stretch' src='../logs/screenShotFailure" + test_name + ".png'></img>");
+    screenShotPath = test_list[i].testDetails.logs.screenShotFailure;
+    var body = $("<img class='stretch' src='" + screenShotPath + "'></img>");
     var footer = $("<div class='md-close' onclick='removeModal();'><i class='fa fa-times-circle icon-close' aria-hidden='true'></i></button>");
     $('#modal-header').html('');
     $('#modal-container').html('');

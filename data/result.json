@@ -13,10 +13,10 @@
             "classname": "HomePageTest2",
             "endtime": 1501679741,
             "starttime": 1501679720,
-            "results": "Skip",
+            "results": "Fail",
             "logs": {
                 "adbLogs": "adblogs/192.168.58.102:5555__testMethodOne1.txt",
-                "screenShotFailure": "screenshot/android/192.168.58.102:5555/HomePageTest2/testMethodOne1/2017-08-02T18:45:43GooglePixelC_Android_testMethodOne1_failed.jpeg"
+                "screenShotFailure": "../screenshots/test_the_values_returned_by_sell_through_api_are_correct.png"
             },
             "exceptiontrace": "org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 32 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: '3.3.1', revision: '5234b325d5', time: '2017-03-10 09:10:29 +0000'\nSystem info: host: 'insaikrisv-2.local', ip: 'fe80:0:0:0:18aa:d59a:5229:ead0%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.12.5', java.version: '1.8.0_111'\nDriver info: io.appium.java_client.android.AndroidDriver\nCapabilities [{app=/Users/saikrisv/Documents/workspace/workspace1/TestNGParallelThreadBeforeClass/build/AndroidCalculator.apk, noSign=true, automationName=UIAutomator2, platformName=Android, udid=192.168.58.102:5555, deviceName=android, platform=ANY, systemPort=52460}]\nSession ID: 30c2cf7e-a779-4aae-add9-f14a39abbd72\n*** Element info: {Using=accessibility id, value=login}",
             "methodname": "testMethodOne1"
@@ -53,7 +53,7 @@
             "results": "Fail",
             "logs": {
                 "adbLogs": "adblogs/192.168.58.102:5555__testMethodOne2.txt",
-                "screenShotFailure": "screenshot/android/192.168.58.102:5555/HomePageTest2/testMethodOne2/2017-08-02T18:46:07GooglePixelC_Android_testMethodOne2_failed.jpeg"
+                "screenShotFailure": "../screenshots/test_user_can_not_retrieve_event_details_with_nonexisting_factid.png"
             },
             "exceptiontrace": "org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 363 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: '3.3.1', revision: '5234b325d5', time: '2017-03-10 09:10:29 +0000'\nSystem info: host: 'insaikrisv-2.local', ip: 'fe80:0:0:0:18aa:d59a:5229:ead0%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.12.5', java.version: '1.8.0_111'\nDriver info: io.appium.java_client.android.AndroidDriver\nCapabilities [{app=/Users/saikrisv/Documents/workspace/workspace1/TestNGParallelThreadBeforeClass/build/AndroidCalculator.apk, noSign=true, automationName=UIAutomator2, platformName=Android, udid=192.168.58.102:5555, deviceName=android, platform=ANY, systemPort=52947}]\nSession ID: 0fc5be48-cf51-48f7-a365-7a443eb5770e\n*** Element info: {Using=accessibility id, value=login}",
             "methodname": "testMethodOne2"
@@ -69,7 +69,7 @@
             "classname": "HomePageTest3",
             "endtime": 1501679773,
             "starttime": 1501679748,
-            "results": "Pass",
+            "results": "Skip",
             "logs": {
                 "adbLogs": "adblogs/192.168.58.103:5555__testMethodOne4.txt"
             },
@@ -198,7 +198,7 @@
             "results": "Fail",
             "logs": {
                 "adbLogs": "adblogs/192.168.58.102:5555__testMethodOne7.txt",
-                "screenShotFailure": "screenshot/android/192.168.58.102:5555/HomePageTest1/testMethodOne7/2017-08-02T18:48:03GooglePixelC_Android_testMethodOne7_failed.jpeg"
+                "screenShotFailure": "../screenshots/test_user_can_not_retrieve_force_details_with_nonexisting_event_key.png"
             },
             "exceptiontrace": "org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 545 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: '3.3.1', revision: '5234b325d5', time: '2017-03-10 09:10:29 +0000'\nSystem info: host: 'insaikrisv-2.local', ip: 'fe80:0:0:0:18aa:d59a:5229:ead0%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.12.5', java.version: '1.8.0_111'\nDriver info: io.appium.java_client.android.AndroidDriver\nCapabilities [{app=/Users/saikrisv/Documents/workspace/workspace1/TestNGParallelThreadBeforeClass/build/AndroidCalculator.apk, noSign=true, automationName=UIAutomator2, platformName=Android, udid=192.168.58.102:5555, deviceName=android, platform=ANY, systemPort=55168}]\nSession ID: 56dcefed-b989-4262-a05b-e1c1760840ff\n*** Element info: {Using=id, value=com.android2.calculator3:id/digit33}",
             "methodname": "testMethodOne7"
