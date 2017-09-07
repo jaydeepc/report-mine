@@ -5,7 +5,7 @@
 "failed": 5,
 "error": 1,
 "skipped": 1,
-"duration": 12
+"duration": 150
 },
 "tests": [
     {
@@ -21,7 +21,7 @@
             "exceptiontrace": "org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 32 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: '3.3.1', revision: '5234b325d5', time: '2017-03-10 09:10:29 +0000'\nSystem info: host: 'insaikrisv-2.local', ip: 'fe80:0:0:0:18aa:d59a:5229:ead0%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.12.5', java.version: '1.8.0_111'\nDriver info: io.appium.java_client.android.AndroidDriver\nCapabilities [{app=/Users/saikrisv/Documents/workspace/workspace1/TestNGParallelThreadBeforeClass/build/AndroidCalculator.apk, noSign=true, automationName=UIAutomator2, platformName=Android, udid=192.168.58.102:5555, deviceName=android, platform=ANY, systemPort=52460}]\nSession ID: 30c2cf7e-a779-4aae-add9-f14a39abbd72\n*** Element info: {Using=accessibility id, value=login}",
             "methodname": "testMethodOne1"
         },
-        "totaltime": 1500178061,
+        "totaltime": 2.6,
         "model": "GooglePixelC_Android",
         "id": "192.168.58.102:5555",
         "version": "6.0",
@@ -39,7 +39,7 @@
             "exceptiontrace": "null",
             "methodname": "testMethodOne3"
         },
-        "totaltime": 1500178068,
+        "totaltime": 3,
         "model": "GoogleNexus6_Android",
         "id": "192.168.58.103:5555",
         "version": "6.0",
@@ -58,7 +58,7 @@
             "exceptiontrace": "org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 363 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: '3.3.1', revision: '5234b325d5', time: '2017-03-10 09:10:29 +0000'\nSystem info: host: 'insaikrisv-2.local', ip: 'fe80:0:0:0:18aa:d59a:5229:ead0%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.12.5', java.version: '1.8.0_111'\nDriver info: io.appium.java_client.android.AndroidDriver\nCapabilities [{app=/Users/saikrisv/Documents/workspace/workspace1/TestNGParallelThreadBeforeClass/build/AndroidCalculator.apk, noSign=true, automationName=UIAutomator2, platformName=Android, udid=192.168.58.102:5555, deviceName=android, platform=ANY, systemPort=52947}]\nSession ID: 0fc5be48-cf51-48f7-a365-7a443eb5770e\n*** Element info: {Using=accessibility id, value=login}",
             "methodname": "testMethodOne2"
         },
-        "totaltime": 1500178085,
+        "totaltime": 4,
         "model": "GooglePixelC_Android",
         "id": "192.168.58.102:5555",
         "version": "6.0",
@@ -76,7 +76,7 @@
             "exceptiontrace": "null",
             "methodname": "testMethodOne4"
         },
-        "totaltime": 1500178093,
+        "totaltime": 4,
         "model": "GoogleNexus6_Android",
         "id": "192.168.58.103:5555",
         "version": "6.0",
@@ -94,7 +94,7 @@
             "exceptiontrace": "null",
             "methodname": "testMethodOne1"
         },
-        "totaltime": 1500178112,
+        "totaltime": 8,
         "model": "GooglePixelC_Android",
         "id": "192.168.58.102:5555",
         "version": "6.0",
@@ -112,7 +112,7 @@
             "exceptiontrace": "null",
             "methodname": "testMethodFive5"
         },
-        "totaltime": 1500178119,
+        "totaltime": 21,
         "model": "GoogleNexus6_Android",
         "id": "192.168.58.103:5555",
         "version": "6.0",
@@ -130,7 +130,7 @@
             "exceptiontrace": "null",
             "methodname": "testMethodOne10"
         },
-        "totaltime": 1500178132,
+        "totaltime": 43,
         "model": "GooglePixelC_Android",
         "id": "192.168.58.102:5555",
         "version": "6.0",
@@ -148,7 +148,7 @@
             "exceptiontrace": "null",
             "methodname": "testMethodFour"
         },
-        "totaltime": 1500178145,
+        "totaltime": 5,
         "model": "GoogleNexus6_Android",
         "id": "192.168.58.103:5555",
         "version": "6.0",
@@ -166,7 +166,7 @@
             "exceptiontrace": "null",
             "methodname": "testMethodOne11"
         },
-        "totaltime": 1500178154,
+        "totaltime": 5.3,
         "model": "GooglePixelC_Android",
         "id": "192.168.58.102:5555",
         "version": "6.0",
@@ -184,7 +184,7 @@
             "exceptiontrace": "null",
             "methodname": "testMethodOne6"
         },
-        "totaltime": 1500178179,
+        "totaltime": 12,
         "model": "GooglePixelC_Android",
         "id": "192.168.58.102:5555",
         "version": "6.0",
@@ -203,7 +203,7 @@
             "exceptiontrace": "org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 545 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: '3.3.1', revision: '5234b325d5', time: '2017-03-10 09:10:29 +0000'\nSystem info: host: 'insaikrisv-2.local', ip: 'fe80:0:0:0:18aa:d59a:5229:ead0%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.12.5', java.version: '1.8.0_111'\nDriver info: io.appium.java_client.android.AndroidDriver\nCapabilities [{app=/Users/saikrisv/Documents/workspace/workspace1/TestNGParallelThreadBeforeClass/build/AndroidCalculator.apk, noSign=true, automationName=UIAutomator2, platformName=Android, udid=192.168.58.102:5555, deviceName=android, platform=ANY, systemPort=55168}]\nSession ID: 56dcefed-b989-4262-a05b-e1c1760840ff\n*** Element info: {Using=id, value=com.android2.calculator3:id/digit33}",
             "methodname": "testMethodOne7"
         },
-        "totaltime": 1500178201,
+        "totaltime": 23,
         "model": "GooglePixelC_Android",
         "id": "192.168.58.102:5555",
         "version": "6.0",
@@ -221,7 +221,7 @@
             "exceptiontrace": "null",
             "methodname": "testMethodOne8"
         },
-        "totaltime": 1500178222,
+        "totaltime": 13,
         "model": "GooglePixelC_Android",
         "id": "192.168.58.102:5555",
         "version": "6.0",
@@ -239,7 +239,7 @@
             "exceptiontrace": "null",
             "methodname": "testMethodOne9"
         },
-        "totaltime": 1500178244,
+        "totaltime": 7,
         "model": "GooglePixelC_Android",
         "id": "192.168.58.102:5555",
         "version": "6.0",

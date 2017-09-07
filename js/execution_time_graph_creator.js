@@ -1,5 +1,5 @@
  function fetch_name(name_with_class){
-    var name = name_with_class.split("::").pop(-1);
+    name = name_with_class;
     return name;
 }
 
@@ -124,7 +124,7 @@ function between(x, min, max) {
             name_time_json = {};
             s_data = []
             for (var i=0; i<total_tests.length; i++){
-                name_time_json[fetch_name(total_tests[i].name)] = parseFloat(total_tests[i].duration).toFixed(4);
+                name_time_json[fetch_name(total_tests[i].testDetails.methodname)] = parseFloat(total_tests[i].totaltime).toFixed(4);
             }
 
             s_data = create_series_data(name_time_json);

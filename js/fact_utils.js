@@ -2,18 +2,17 @@ $(document).ready(function() {
 
     $.getJSON('../data/result.json', function(jd) {
         test_list = jd.report.tests;
-
-        $(".time-exe").append(Math.round(find_slowest_test(test_list).duration));
-        $("#check_slw_test").attr("onclick", "location.href='test_result.html?test_name=" + fetch_test_name(find_slowest_test(test_list).name) + "';");
+        $(".time-exe").append(Math.round(find_slowest_test(test_list).totaltime));
+        $("#check_slw_test").attr("onclick", "location.href='test_result.html?test_name=" + (find_slowest_test(test_list).testDetails.methodname) + "';");
 
         $(".time-module").append(Math.round(sorted_module_arr(create_module_dict_arr(jd), "avg_test_time").slice(-1)[0].duration));
-        $("#check_slw_mod").attr("onclick", "location.href='test_result.html?module=" + sorted_module_arr(create_module_dict_arr(jd), "avg_test_time").slice(-1)[0].module + "';");
+        $("#check_slw_mod").attr("onclick", "location.href='test_result.html?module_name=" + sorted_module_arr(create_module_dict_arr(jd), "avg_test_time").slice(-1)[0].module + "';");
 
         $(".vul-module").append(Math.round(sorted_module_arr(create_module_dict_arr(jd), "failure_rate").slice(-1)[0].failure_rate));
-        $("#check_vul_mod").attr("onclick", "location.href='test_result.html?module=" + sorted_module_arr(create_module_dict_arr(jd), "failure_rate").slice(-1)[0].module + "';");
+        $("#check_vul_mod").attr("onclick", "location.href='test_result.html?module_name=" + sorted_module_arr(create_module_dict_arr(jd), "failure_rate").slice(-1)[0].module + "';");
 
         $(".fastest-module").append(Math.round(sorted_module_arr(create_module_dict_arr(jd), "avg_test_time")[0].avg_test_time));
-        $("#check_fast_mod").attr("onclick", "location.href='test_result.html?module=" + sorted_module_arr(create_module_dict_arr(jd), "avg_test_time")[0].module + "';");
+        $("#check_fast_mod").attr("onclick", "location.href='test_result.html?module_name=" + sorted_module_arr(create_module_dict_arr(jd), "avg_test_time")[0].module + "';");
 
         $(".avg-time").append(Math.round(avg_test_execution_time(jd)));
         $("#avg_test").attr("onclick", "location.href='test_execution_time_graph.html';");
@@ -28,7 +27,7 @@ function avg_test_execution_time(json_data){
 }
 
 function find_slowest_test(test_list){
-    var new_sorted_list = sortByKey(test_list, "duration")
+    var new_sorted_list = sortByKey(test_list, "totaltime")
     return new_sorted_list.slice(-1)[0];
 }
 
@@ -74,8 +73,8 @@ function create_module_dict_arr(jd){
         var my_array = [];
 
         for(i=0; i<jd.report.tests.length; i++){
-          value = jd.report.tests[i].name;
-          module_name = value.split("::")[1]
+          value = jd.report.tests[i].testDetails.classname;
+          module_name = value
           var count = (module[module_name] || 0) + 1;
           module[module_name] = count;
         }
@@ -94,21 +93,21 @@ function create_module_dict_arr(jd){
             var duration = 0.0;
 
             for (i=0; i < jd.report.tests.length; i++){
-                if(jd.report.tests[i].name.split("::")[1] == key){
-                    if (jd.report.tests[i].outcome == 'passed'){
+                if(jd.report.tests[i].testDetails.classname == key){
+                    if (jd.report.tests[i].testDetails.results == 'Pass'){
                         pass_count = pass_count + 1;
                     }
-                    else if (jd.report.tests[i].outcome == 'failed'){
+                    else if (jd.report.tests[i].testDetails.results == 'Fail'){
                         fail_count = fail_count + 1;
                     }
-                    else if (jd.report.tests[i].outcome == 'skipped'){
+                    else if (jd.report.tests[i].testDetails.results == 'Skip'){
                         skip_count = skip_count + 1;
                     }
-                    else if (jd.report.tests[i].outcome == 'error'){
+                    else if (jd.report.tests[i].testDetails.results == 'Error'){
                         error_count = error_count + 1;
                     }
 
-                    duration = duration + jd.report.tests[i].duration;
+                    duration = duration + jd.report.tests[i].totaltime;
                 }
             }
             details['total'] = module[key];

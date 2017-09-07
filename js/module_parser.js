@@ -4,12 +4,14 @@
         var modules = {};
         var my_array = [];
 
+
         for(i=0; i<jd.report.tests.length; i++){
-          value = jd.report.tests[i].name;
-          module_name = value.split("::")[1]
+          value = jd.report.tests[i].testDetails.classname;
+          module_name = jd.report.tests[i].testDetails.classname;
           var count = (module[module_name] || 0) + 1;
           module[module_name] = count;
         }
+
 
         for (key in module) {
             var details = {};
@@ -23,17 +25,17 @@
             var error_count = 0;
 
             for (i=0; i < jd.report.tests.length; i++){
-                if(jd.report.tests[i].name.split("::")[1] == key){
-                    if (jd.report.tests[i].outcome == 'passed'){
+                if(jd.report.tests[i].testDetails.classname == key){
+                    if (jd.report.tests[i].testDetails.results == 'Pass'){
                         pass_count = pass_count + 1;
                     }
-                    else if (jd.report.tests[i].outcome == 'failed'){
+                    else if (jd.report.tests[i].testDetails.results == 'Fail'){
                         fail_count = fail_count + 1;
                     }
-                    else if (jd.report.tests[i].outcome == 'skipped'){
+                    else if (jd.report.tests[i].testDetails.results == 'Skip'){
                         skip_count = skip_count + 1;
                     }
-                    else if (jd.report.tests[i].outcome == 'error'){
+                    else if (jd.report.tests[i].testDetails.results == 'Error'){
                         error_count = error_count + 1;
                     }
 
@@ -47,6 +49,7 @@
             modules[key] = details;
 
         }
+
 
         for (key in modules){
             var data_for_graph = {};
@@ -81,28 +84,28 @@
                var error_link = ""
 
                if (modules[key]['fail_count'] > 0){
-                    failed_link = "<li><b><a href='test_result.html?module=" + key + "&status=passed'>" + modules[key]['fail_count'] + "</b> - Tests Failed</li></a>";
+                    failed_link = "<li><b><a href='test_result.html?module_name=" + key + "&status=Fail'>" + modules[key]['fail_count'] + "</b> - Tests Failed</li></a>";
                }
                else{
                     failed_link = "<li><b>" + modules[key]['fail_count'] + "</b> - Tests Failed</li>";
                }
 
                if (modules[key]['pass_count'] > 0){
-                    passed_link = "<li><b><a href='test_result.html?module=" + key + "&status=passed'>" + modules[key]['pass_count'] + "</b> - Tests Passed</li></a>";
+                    passed_link = "<li><b><a href='test_result.html?module_name=" + key + "&status=Pass'>" + modules[key]['pass_count'] + "</b> - Tests Passed</li></a>";
                }
                else{
                     passed_link = "<li><b>" + modules[key]['pass_count'] + "</b> - Tests Passed</li>";
                }
 
                if (modules[key]['error_count'] > 0){
-                    error_link = "<li><b><a href='test_result.html?module=" + key + "&status=error'>" + modules[key]['error_count'] + "</b> - Tests Errored Out</li></a>";
+                    error_link = "<li><b><a href='test_result.html?module_name=" + key + "&status=Error'>" + modules[key]['error_count'] + "</b> - Tests Errored Out</li></a>";
                }
                else{
                     error_link = "<li><b>" + modules[key]['error_count'] + "</b> - - Tests Errored Out</li>";
                }
 
                if (modules[key]['skip_count'] > 0){
-                    skipped_link = "<li><b><a href='test_result.html?module=" + key + "&status=skipped'>" + modules[key]['skip_count'] + "</b> - Tests Skipped</li></a>";
+                    skipped_link = "<li><b><a href='test_result.html?module_name=" + key + "&status=Skip'>" + modules[key]['skip_count'] + "</b> - Tests Skipped</li></a>";
                }
                else{
                     skipped_link = "<li><b>" + modules[key]['skip_count'] + "</b> - Tests Skipped</li>";
@@ -113,7 +116,7 @@
                   '<div class="plan" id="'+ ready_to_release +'"><h3>' + key + '<span>' + pass_percent + '%</span></h3>' +
                   '<div class="confidence" style="color: white; background-color: ' + confidence_color + '">' + 'Confidence' + '</div>' +
                   '<ul>' +
-                      '<li><b><a href=\'test_result.html?module=' + key + '\'>' + modules[key]['total'] + '</b> - Total Number of Tests</li></a>' +
+                      '<li><b><a href=\'test_result.html?module_name=' + key + '\'>' + modules[key]['total'] + '</b> - Total Number of Tests</li></a>' +
                        passed_link +
                        failed_link +
                        error_link +
