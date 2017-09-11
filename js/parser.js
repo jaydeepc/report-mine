@@ -112,10 +112,10 @@
               value: data,
               min: 0,
               max: 600,
-              title: "Execution Time Status",
+              title: "",
               label: "Time in Seconds",
-              width: 600,
-              height: 400
+              width: 300,
+              height: 100
               });
             }
 

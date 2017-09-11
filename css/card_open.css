@@ -29,13 +29,9 @@ h2 a {
 }
 
 .container {
-    text-align: left;
-    overflow: hidden;
-    width: 50%;
-    margin: 38px auto;
-    display: table;
-    padding: 0px 0 8em 0;
-    height: 165px;
+    text-align: right;
+    margin-top: 12px;
+    margin-right: 19px;
 }
 
 .container td, .container th {
