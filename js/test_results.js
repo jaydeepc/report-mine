@@ -40,40 +40,67 @@ $(document).ready(function() {
 
             }
         }).then(function(){
-                var url = window.location.href;
-                query_param = url.split("?")[1];
-
-                if(query_param !== undefined){
-                    param_dict = {};
-                    query_param_list = query_param.split("&");
-                    for(var i=0; i<query_param_list.length; i++){
-                        key_val = query_param_list[i].split("=");
-                        param_dict[key_val[0]] = key_val[1];
+                url = window.location.href;
+                query_params = url.split("?")[1].split("&");
+                var keys = new Array();
+                var vals = new Array();
+                for(var i = 0; i<query_params.length; i++){
+                    keys.push(query_params[i].split("=")[0]);
+                    vals.push(query_params[i].split("=")[1]);
                     }
+
+                separator = ";";
+                for(var i=0; i<keys.length; i++){
+                    key = keys[i];
+                    value = vals[i];
+                    if(i==keys.length-1)
+                       separator = "";
+                    $(".filter-name").append(" "+ first_to_uppercase(key)+": "+first_to_uppercase(value) + separator); //fills the title info
+
                     var table = document.querySelector("table");
                     var rows = table.rows;
-                    var separator = " "
-                    keys = Object.keys(param_dict)
-                    if (keys.length > 1){
-                        separator = ", "
-                    }
-                    for (var j=0; j<keys.length; j++){
-                        if (j == (keys.length -1)){
-                            var separator = ""
-                        }
-                        $(".filter-name").append(" "+ first_to_uppercase(keys[j])+": "+first_to_uppercase(param_dict[keys[j]]) + separator);
-                        column_index = find_pos_from_filter_key(table_creator, keys[j]);
-                        for (var i = 1; i < rows.length; i++) {
-                            if((rows[i].cells[column_index].innerHTML != param_dict[keys[j]])){
-                                rows[i].remove();
-                                i = i - 1;
+                    var json = keys.getDuplicates();
+                    column_index = find_pos_from_filter_key(table_creator, key);
+
+                    //if the key is duplicated, check for all values across rows, before removing the row
+                    if(key in json){
+                        var mergedVal = new Array();
+                        json[key].forEach(function (index){
+                            mergedVal.push(vals[index]);
+                        });
+                        for (var j = 1; j < rows.length; j++) {
+                        row_val= rows[j].cells[column_index].innerHTML;
+                        if($.inArray(row_val, mergedVal)==-1){
+                            rows[j].remove();
+                                j = j - 1;
+                                }
                             }
-                        }
+                        } else{
+                            for (var j = 1; j < rows.length; j++) {
+                            if((rows[j].cells[column_index].innerHTML != value)){
+                                rows[j].remove();
+                                j = j - 1;
+                                }
+                             }
+                          }
                     }
-                }
         });
 
 });
+
+
+Array.prototype.getDuplicates = function () {
+    var duplicates = {};
+    for (var i = 0; i < this.length; i++) {
+        if(duplicates.hasOwnProperty(this[i])) {
+            duplicates[this[i]].push(i);
+        } else if (this.lastIndexOf(this[i]) !== i) {
+            duplicates[this[i]] = [i];
+        }
+    }
+    return duplicates;
+};
+
 
 function stackTraceLink(){
     if (test_list[i].testDetails.results != 'Pass'){
