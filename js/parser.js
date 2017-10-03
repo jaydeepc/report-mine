@@ -114,8 +114,8 @@
               max: 600,
               title: "",
               label: "Time in Seconds",
-              width: 300,
-              height: 100
+              width: 500,
+              height: 200
               });
             }
 

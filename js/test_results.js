@@ -10,8 +10,11 @@ $(document).ready(function() {
             0:{"Module Name": "module_name"},
             1:{"Test Name": "test_name"},
             2:{"Status": "status"},
-            3:{"Stack Trace": "stacktrace"},
-            4: {"Artifact": "atrifact"}
+            3: {"Platform": "platform"},
+            4: {"Device Name": "device"},
+            5:{"Stack Trace": "stacktrace"},
+            6: {"Artifact": "atrifact"}
+
         };
 
         for(i=0; i<test_list.length; i++){
@@ -28,6 +31,12 @@ $(document).ready(function() {
             +
             "</td><td>" +
             test_list[i].testDetails.results
+            +
+            "</td><td>" +
+            test_list[i].platform
+            +
+            "</td><td>" +
+            test_list[i].model
             +
             "</td><td>" +
             SecondsTohhmmss(test_list[i].totaltime) + "</td>"

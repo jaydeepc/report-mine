@@ -64,28 +64,28 @@
                var error_link = ""
 
                if (platforms[key]['fail_count'] > 0){
-                    failed_link = "<li><b><a class='link-font' href='test_result.html?module_name=" + key + "&status=Fail'>" + platforms[key]['fail_count'] + "</b> - Tests Failed</li></a>";
+                    failed_link = "<li><b><a class='link-font' href='test_result.html?device=" + key + "&status=Fail'>" + platforms[key]['fail_count'] + "</b> - Tests Failed</li></a>";
                }
                else{
                     failed_link = "<li><b>" + platforms[key]['fail_count'] + "</b> - Tests Failed</li>";
                }
 //
                if (platforms[key]['pass_count'] > 0){
-                    passed_link = "<li><b><a class='link-font' href='test_result.html?module_name=" + key + "&status=Pass'>" + platforms[key]['pass_count'] + "</b> - Tests Passed</li></a>";
+                    passed_link = "<li><b><a class='link-font' href='test_result.html?device=" + key + "&status=Pass'>" + platforms[key]['pass_count'] + "</b> - Tests Passed</li></a>";
                }
                else{
                     passed_link = "<li class='link-font'><b>" + platforms[key]['pass_count'] + "</b> - Tests Passed</li>";
                }
 //
                if (platforms[key]['error_count'] > 0){
-                    error_link = "<li><b><a class='link-font' href='test_result.html?module_name=" + key + "&status=Error'>" + platforms[key]['error_count'] + "</b> - Tests Errored Out</li></a>";
+                    error_link = "<li><b><a class='link-font' href='test_result.html?device=" + key + "&status=Error'>" + platforms[key]['error_count'] + "</b> - Tests Errored Out</li></a>";
                }
                else{
                     error_link = "<li><b>" + platforms[key]['error_count'] + "</b> - - Tests Errored Out</li>";
                }
 
                if (platforms[key]['skip_count'] > 0){
-                    skipped_link = "<li><b><a class='link-font' href='test_result.html?module_name=" + key + "&status=Skip'>" + platforms[key]['skip_count'] + "</b> - Tests Skipped</li></a>";
+                    skipped_link = "<li><b><a class='link-font' href='test_result.html?device=" + key + "&status=Skip'>" + platforms[key]['skip_count'] + "</b> - Tests Skipped</li></a>";
                }
                else{
                     skipped_link = "<li><b>" + platforms[key]['skip_count'] + "</b> - Tests Skipped</li>";

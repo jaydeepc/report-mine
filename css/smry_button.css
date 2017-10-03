@@ -99,7 +99,7 @@
   text-indent: .1em;
 }
 .search:after {
-  content: "\f002";
+  content: "\f017";
 }
 .search:hover:after {
   -webkit-animation: none;
