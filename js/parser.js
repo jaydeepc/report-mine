@@ -34,15 +34,17 @@
                     createPie("chartdiv", total_pass_tests, total_failed_tests, total_skipped_tests, total_errored_tests);
 
                     //populate gaugechart and details table
-//                    platform = jd.report.environment.Platform;
-//                    python_version = jd.report.environment.Python;
+
+                    platform = jd.report.userMetaData.Appium;
+                    app_version = jd.report.userMetaData.app_version;
+                    runner = jd.report.userMetaData.runner;
                     execution_time = jd.report.summary.duration.toFixed(2);
-//                    converted_exe_time = msToTime(execution_time);
-//                    time_of_execution = jd.report.created_at;
-//                    $('.env').append(python_version);
-//                    $('.tags').append(execution_time);
-//                    $('.gt').append(time_of_execution);
-//                    $('.project').append(platform);
+                    converted_exe_time = msToTime(execution_time);
+
+                    $('.env').append(app_version);
+                    $('.tags').append(runner);
+                    $('.project').append(platform);
+
                     createSpeedoMeter("gaugechart", Math.round(execution_time));
                });
 
@@ -114,8 +116,8 @@
               max: 600,
               title: "",
               label: "Time in Seconds",
-              width: 500,
-              height: 200
+              width: 600,
+              height: 400
               });
             }
 

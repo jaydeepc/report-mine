@@ -3,10 +3,10 @@ $(document).ready(function() {
   $(".summary-page-table-heading").text("Complete");
 
   //Setup execution table column details
-  $("#first-details").text("Platform");
-  $("#second-details").text("Python Version");
-  $("#third-details").text("Execution Time");
-  $("#fourth-details").text("Created On");
+  $("#first-details").text("Appium Version");
+  $("#second-details").text("Application Version");
+  $("#third-details").text("Runner");
+//  $("#fourth-details").text("Created On");
 
   //Hide data label in gaugechart
   $(".highcharts-label").hide();
