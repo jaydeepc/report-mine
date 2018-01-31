@@ -61,6 +61,7 @@
             my_array.push(data_for_graph);
         }
 
+        console.log(JSON.stringify(modules));
 
         for (key in modules){
                 var confidence_color;
